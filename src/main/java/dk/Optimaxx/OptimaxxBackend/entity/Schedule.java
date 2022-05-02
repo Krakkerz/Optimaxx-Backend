@@ -3,6 +3,8 @@ package dk.Optimaxx.OptimaxxBackend.entity;
 import lombok.*;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.time.LocalDateTime;
 
@@ -13,7 +15,8 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder
 public class Schedule {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private LocalDateTime startTime;
     private Long movieId;

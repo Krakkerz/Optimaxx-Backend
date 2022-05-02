@@ -2,10 +2,7 @@ package dk.Optimaxx.OptimaxxBackend.entity;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.Set;
 
 @Entity
@@ -15,12 +12,13 @@ import java.util.Set;
 @AllArgsConstructor
 @Builder
 public class Cinema {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
     private String Location;
-    
+
     private Set<Room> rooms = new java.util.LinkedHashSet<>();
 
     public void setId(Long id) {

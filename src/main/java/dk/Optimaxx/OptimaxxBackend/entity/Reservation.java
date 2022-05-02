@@ -3,6 +3,8 @@ package dk.Optimaxx.OptimaxxBackend.entity;
 import lombok.*;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
@@ -12,7 +14,8 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @Builder
 public class Reservation {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long memberId;
     private Long seatId;

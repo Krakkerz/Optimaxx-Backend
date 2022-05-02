@@ -2,10 +2,7 @@ package dk.Optimaxx.OptimaxxBackend.entity;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
 @Getter
@@ -14,6 +11,8 @@ import javax.persistence.ManyToOne;
 @AllArgsConstructor
 @Builder
 public class Room {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long cinemaId;
     private String description;
