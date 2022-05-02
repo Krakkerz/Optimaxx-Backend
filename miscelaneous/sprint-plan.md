@@ -2,7 +2,9 @@
 
 ![ER diagram](./er-diagram.webp)
 
-<ul> plan for the 9th may
+
+<h1> plan for the 9th may</h1>
+<ul> 
 
 <li> make relations between entities </li>
 
