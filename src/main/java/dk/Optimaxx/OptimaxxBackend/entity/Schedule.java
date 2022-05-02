@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.time.LocalDateTime;
 
 @Entity
 @Getter
@@ -14,6 +15,10 @@ import javax.persistence.Id;
 public class Schedule {
 
     private Long id;
+    private LocalDateTime startTime;
+    private Long movieId;
+    private Long roomId;
+    private int basePrice;
 
     public void setId(Long id) {
         this.id = id;

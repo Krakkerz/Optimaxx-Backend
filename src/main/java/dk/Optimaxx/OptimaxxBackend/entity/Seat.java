@@ -14,6 +14,8 @@ import javax.persistence.Id;
 public class Seat {
 
     private Long id;
+    private Long roomId;
+    private String type;
 
     public void setId(Long id) {
         this.id = id;

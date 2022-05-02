@@ -14,6 +14,10 @@ import javax.persistence.Id;
 public class Reservation {
 
     private Long id;
+    private Long memberId;
+    private Long seatId;
+    private Long scheduleId;
+
 
     public void setId(Long id) {
         this.id = id;

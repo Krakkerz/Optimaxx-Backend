@@ -14,6 +14,9 @@ import javax.persistence.Id;
 public class User {
 
     private Long id;
+    private String email;
+    private String name;
+    private String phoneNumber;
 
     public void setId(Long id) {
         this.id = id;
