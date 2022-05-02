@@ -6,10 +6,8 @@ Implementing a booking system for a cinema chain
 We have also documented our weekly sprints in [our sprint plan](/miscelaneous/sprint-plan.md)
 
 ## Group Members
-[Malthe Gram](https://github.com/MaltheGram)  
-[Mark Larsen](https://github.com/mark3010)  
-[Simon Gredal](https://github.com/simongredal)  
-[Frederik Vilhelmsen](https://github.com/frederikmahipal)  
+[Malthe Gram](https://github.com/MaltheGram), [Mark Larsen](https://github.com/mark3010),
+[Simon Gredal](https://github.com/simongredal), [Frederik Vilhelmsen](https://github.com/frederikmahipal)  
 
 ## Group Contract
 §1.0  We agree on meeting times and working hours from day to day  
