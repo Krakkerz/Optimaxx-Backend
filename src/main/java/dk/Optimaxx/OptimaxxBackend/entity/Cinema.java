@@ -18,8 +18,7 @@ public class Cinema {
 
     private String name;
     private String Location;
-
-    private Set<Room> rooms = new java.util.LinkedHashSet<>();
+    
 
     public void setId(Long id) {
         this.id = id;
