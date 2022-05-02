@@ -8,11 +8,11 @@
         <version>2.6.4</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>dk.krakkerz</groupId>
-    <artifactId>krakheadz-backend</artifactId>
+    <groupId>dk.optimaxx</groupId>
+    <artifactId>optimaxx-backend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>krakheadz-backend</name>
-    <description>KrakHeadz for School</description>
+    <name>optimaxx-backend</name>
+    <description>Optimaxx xinema</description>
     <properties>
         <java.version>17</java.version>
     </properties>
