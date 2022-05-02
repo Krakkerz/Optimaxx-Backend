@@ -2,12 +2,14 @@
 
 ![ER diagram](./er-diagram.webp)
 
-*make relations between entities
+<ul> plan for the 9th may
 
-*add paginated rest end points
+<li> make relations between entities </li>
 
-*add data to database
+<li> add paginated rest end points </li>
 
-*view data on frontend
+<li> add data to database </li>
 
-(skip tests for now)
+<li> view data on frontend </li>
+
+ </ul> 
