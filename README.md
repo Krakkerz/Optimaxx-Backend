@@ -2,19 +2,19 @@
 
 Implementing a booking system for a cinema chain  
 
-A link to your deployed Spring Boot Project (using a REAL MySQL Database)
+**A link to your deployed Spring Boot Project (using a REAL MySQL Database)**
 [LINK TO DEPLOYED PROJECT HERE](https://example.com/) 
 
-A description of what you have committed your team to in the first sprint (backend and frontend)
+**A description of what you have committed your team to in the first sprint (backend and frontend)**
 we designed an ER diagram of all entities. We have created frontend/backend and set up the CI/CD pipeline
 
-A link to your frontend repository
+**A link to your frontend repository**
 https://github.com/Krakkerz/Optimaxx-Frontend
 
-A link to your deployed frontend code
+**A link to your deployed frontend code**
 -MIA
 
-A list of sprint tasks you expect to complete in this sprint
+**A list of sprint tasks you expect to complete in this sprint**
 We have also documented our weekly sprints in [our sprint plan](/miscelaneous/sprint-plan.md)
 
 
