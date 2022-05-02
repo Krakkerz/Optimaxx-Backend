@@ -8,4 +8,5 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin
 @AllArgsConstructor
 public class MovieController {
+    //add stuff here
 }
