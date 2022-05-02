@@ -2,26 +2,11 @@
 
 Implementing a booking system for a cinema chain  
 
-**A link to your deployed Spring Boot Project (using a REAL MySQL Database)**
+## Links
 
-[LINK TO DEPLOYED PROJECT HERE](https://example.com/) 
-
-**A description of what you have committed your team to in the first sprint (backend and frontend)**
-
-we designed an ER diagram of all entities. We have created frontend/backend and set up the CI/CD pipeline
-
-**A link to your frontend repository**
-
-https://github.com/Krakkerz/Optimaxx-Frontend
-
-**A link to your deployed frontend code**
-
--MIA
-
-**A list of sprint tasks you expect to complete in this sprint**
-
-We have also documented our weekly sprints in [our sprint plan](/miscelaneous/sprint-plan.md)
-
+- Frontend [repository](https://github.com/Krakkerz/Optimaxx-Frontend) and [deployment](https://ashy-hill-02df19203.1.azurestaticapps.net) 
+- Backend [repository](https://github.com/Krakkerz/Optimaxx-Backend) and [deployment](https://optimaxx.azurewebsites.net)
+- We have documented our weekly sprints in [our sprint plan](./SPRINT.md)
 
 ## Group Members
 [Malthe Gram](https://github.com/MaltheGram), [Mark Larsen](https://github.com/mark3010),
@@ -42,5 +27,3 @@ We will use the GitHub Flow branching strategy.
    1. At least one other person MUST review and accept the pull request
    2. Tests MUST be passing on the local development before creating a pull request
    3. Local development branches SHOULD be rebased onto main before creating a pull request
- 
-
