@@ -3,7 +3,7 @@
 Implementing a booking system for a cinema chain  
 [LINK TO DEPLOYED PROJECT HERE](https://example.com/) 
 
-We have also documented our weekly sprints in [our sprint plan](/misc/sprint-plan.md)
+We have also documented our weekly sprints in [our sprint plan](/miscelaneous/sprint-plan.md)
 
 ## Group Members
 [Malthe Gram](https://github.com/MaltheGram)  
