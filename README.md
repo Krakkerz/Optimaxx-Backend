@@ -1,22 +1,20 @@
 # Optimaxx (gruppe 2)
 
-## Name of the project (replace with the name)
+Implementing a booking system for a cinema chain  
+[LINK TO DEPLOYED PROJECT HERE](https://example.com/) 
 
-## Project Description
-work smart not hard
+We have also documented our weekly sprints in [our sprint plan](/misc/sprint-plan.md)
+
+## Group Members
+[Malthe Gram](https://github.com/MaltheGram)  
+[Mark Larsen](https://github.com/mark3010)  
+[Simon Gredal](https://github.com/simongredal)  
+[Frederik Vilhelmsen](https://github.com/frederikmahipal)  
 
 ## Group Contract
-
-§1
-We agree on meeting times and working hours from day to day.
-
- §1.1
- If a time can't be decided, we roll for a time with a random number generator
-
-§2
-Everyone must contribute.
-
-
+§1.0  We agree on meeting times and working hours from day to day  
+§1.1  If a time can't be decided, we roll for a time with a random number generator  
+§2.0  Everyone must contribute
 
 ## Branching Strategy 
 We will use the GitHub Flow branching strategy.
@@ -29,25 +27,4 @@ We will use the GitHub Flow branching strategy.
    2. Tests MUST be passing on the local development before creating a pull request
    3. Local development branches SHOULD be rebased onto main before creating a pull request
  
-## Link to deployed project
----
 
-## Who Did What
-Each member must come up with a short description when the **final deadline is reached**.
-Initially, Each of you should push a commit with just your name
-You should all add your GitHub usename in parenthesis next to your name, so I know who is who, when I check commit messages
-
-## SPRINTS HERE
-
-
-### Member-1
-[Malthe Gram](https://github.com/MaltheGram) => MaltheGram
-
-### Member-2
-[Mark Larsen](https://github.com/mark3010) => mark3010
-
-### Member-3
-[Simon Gredal](https://github.com/simongredal) => simongredal
-
-### Member-4
-[Frederik Vilhelmsen](https://github.com/frederikmahipal) => frederikmahipal
