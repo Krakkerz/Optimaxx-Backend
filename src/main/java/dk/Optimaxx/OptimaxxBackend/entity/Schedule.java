@@ -2,11 +2,9 @@ package dk.Optimaxx.OptimaxxBackend.entity;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -19,18 +17,17 @@ public class Schedule {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private LocalDateTime startTime;
-    private Long movieId;
-    private Long roomId;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Movie movie;
+
+    @OneToMany(mappedBy = "schedule", fetch =FetchType.LAZY)
+    private Set<Reservation> reservations = new java.util.LinkedHashSet<>();
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Room room;
+
     private int basePrice;
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    @Id
-    public Long getId() {
-        return id;
-    }
 }
 
 

@@ -24,15 +24,8 @@ public class Movie {
     private double rating;
     private String picture;
 
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    @Id
-    public Long getId() {
-        return id;
-    }
+    @OneToMany(mappedBy = "movie", fetch =FetchType.LAZY)
+    private Set<Schedule> schedules = new java.util.LinkedHashSet<>();
 }
 
 

@@ -2,10 +2,8 @@ package dk.Optimaxx.OptimaxxBackend.entity;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -21,14 +19,9 @@ public class User {
     private String name;
     private String phoneNumber;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    @OneToMany(mappedBy = "user", fetch =FetchType.LAZY)
+    private Set<Reservation> reservations = new java.util.LinkedHashSet<>();
 
-    @Id
-    public Long getId() {
-        return id;
-    }
 }
 
 
