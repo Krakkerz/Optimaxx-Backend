@@ -29,6 +29,28 @@ public class DummyMoviesConfig implements ApplicationRunner {
                         .releaseDate(LocalDate.parse("2021-11-25"))
                         .picture("https://www.themoviedb.org/t/p/w1280/4j0PNHkMr5ax3IA8tjtxcmPU3QT.jpg")
                         .trailer("https://www.youtube.com/watch?v=CaimKeDcudo")
+                        .build(),
+                Movie.builder()
+                        .title("Dune")
+                        .tagline("It begins.")
+                        .category("Science Fiction, Adventure")
+                        .minimumAge(11)
+                        .duration(Duration.ofHours(2L).plusMinutes(35L))
+                        .rating(0.79)
+                        .releaseDate(LocalDate.parse("2021-09-16"))
+                        .picture("https://www.themoviedb.org/t/p/w1280/4j0PNHkMr5ax3IA8tjtxcmPU3QT.jpg")
+                        .trailer("https://www.youtube.com/watch?v=n9xhJrPXop4")
+                        .build(),
+                Movie.builder()
+                        .title("The Matrix Resurrections")
+                        .tagline("Return to the source.")
+                        .category("Science Fiction, Action, Adventure")
+                        .minimumAge(11)
+                        .duration(Duration.ofHours(2L).plusMinutes(28L))
+                        .rating(0.67)
+                        .releaseDate(LocalDate.parse("2021-12-22"))
+                        .picture("https://www.themoviedb.org/t/p/w1280/d5NXSklXo0qyIYkgV94XAgMIckC.jpg")
+                        .trailer("https://www.youtube.com/watch?v=9ix7TUGVYIo")
                         .build()
                 );
 
