@@ -11,63 +11,63 @@ erDiagram
     ACCOUNT ||--o{ RESERVATION : has  
     
     CINEMA {
-        long id PK
+        Long id PK
         
-        string name
-        string location
+        String name
+        String location
     }
     
     ROOM {
-        long id PK
-        long cinema_id FK
+        Long id PK
+        Long cinema_id FK
         
-        string name
-        string description
+        String name
+        String description
     }
     
     SEAT {
-        long id PK
-        long room_id FK
+        Long id PK
+        Long room_id FK
         
-        enum type
+        Enum type
     }
     
     MOVIE {
-        string id PK
+        String id PK
         
-        string title
-        string description
-        string rating
-        string duration
-        string picture
-        string trailer
-        string category
+        String title
+        String description
+        String rating
+        Duration duration
+        String picture
+        String trailer
+        String category
     }
     
     SHOWING {
-        long id PK
-        long room_id FK
-        string movie_id FK
+        Long id PK
+        Long room_id FK
+        String movie_id FK
         
-        string start_datetime
-        string duration
-        string base_price
+        String start_datetime
+        Duration duration
+        String base_price
     }
     
     RESERVATION {
-        long id PK
-        long account_id FK
-        long schedule_id FK
+        Long id PK
+        Long account_id FK
+        Long schedule_id FK
         
-        bool paid
+        Boolean paid
     }
     
     ACCOUNT {
-        long id PK
-        string email PK
+        Long id PK
+        String email PK
         
-        string name
-        enum type
+        String name
+        Enum type
     }
 
 ```
