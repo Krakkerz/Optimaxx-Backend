@@ -15,8 +15,17 @@ import java.util.List;
 public class RoomService {
     private final RoomRepository roomRepository;
 
-
-
-
+    public List<RoomResponse> getAllRooms(){
+        List<Room> rooms = roomRepository.findAll();
+        return RoomResponse.of(rooms);
     }
+
+    public RoomResponse getRoomById(String id) {
+        boolean roomDoesNotExist = roomRepository.existsById(id);
+        //error stuff here
+
+        Room room = roomRepository.getById(id);
+        return RoomResponse.of(room);
+    }
+}
 

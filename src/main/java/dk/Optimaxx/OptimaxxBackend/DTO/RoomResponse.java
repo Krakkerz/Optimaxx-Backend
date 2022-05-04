@@ -1,6 +1,5 @@
 package dk.Optimaxx.OptimaxxBackend.DTO;
 
-import dk.Optimaxx.OptimaxxBackend.entity.Movie;
 import dk.Optimaxx.OptimaxxBackend.entity.Room;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,10 +14,16 @@ public class RoomResponse {
     private Long id;
     private String description;
 
-    public RoomResponse(Long id, String description) {
+    public RoomResponse(Room room) {
         this.id = id;
         this.description = description;
     }
 
+    public static List<RoomResponse> of(List<Room> entities) {
+        return entities.stream().map(RoomResponse::new).toList();
+    }
 
+    public static RoomResponse of(Room entity) {
+        return new RoomResponse(entity);
+    }
 }
