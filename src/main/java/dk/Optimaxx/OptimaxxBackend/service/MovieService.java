@@ -4,6 +4,7 @@ import dk.Optimaxx.OptimaxxBackend.DTO.MovieResponse;
 import dk.Optimaxx.OptimaxxBackend.entity.Movie;
 import dk.Optimaxx.OptimaxxBackend.repository.MovieRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,7 +14,7 @@ import java.util.List;
 public class MovieService {
     private final MovieRepository movieRepository;
 
-    public List<MovieResponse> getAllMovies(){
+    public List<MovieResponse> getAllMovies(Pageable pageable){
         List<Movie> movies = movieRepository.findAll();
         return MovieResponse.of(movies);
     }
