@@ -25,7 +25,7 @@ public class Movie {
     private String picture;
 
     @OneToMany(mappedBy = "movie", fetch =FetchType.LAZY)
-    private Set<Schedule> schedules = new java.util.LinkedHashSet<>();
+    private Set<Showing> showings = new java.util.LinkedHashSet<>();
 }
 
 
