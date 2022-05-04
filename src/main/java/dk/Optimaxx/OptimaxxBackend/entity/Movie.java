@@ -21,7 +21,7 @@ public class Movie {
     private String category;
     private Integer minimumAge;
     private Duration duration;
-    private LocalDate release;
+    private LocalDate releaseDate;
     private Double rating;
     private String picture;
     private String trailer;

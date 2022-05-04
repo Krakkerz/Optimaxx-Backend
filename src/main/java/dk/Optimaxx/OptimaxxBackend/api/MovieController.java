@@ -9,11 +9,10 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/movie")
+@RequestMapping("/api/movies")
 @CrossOrigin
 @AllArgsConstructor
 public class MovieController {
-    //add stuff here
     private final MovieService movieService;
 
     @GetMapping
@@ -22,7 +21,7 @@ public class MovieController {
     }
 
     @GetMapping("/{id}")
-    public MovieResponse getMovies(@PathVariable String id){
+    public MovieResponse getMovies(@PathVariable Long id){
         return movieService.getMovieById(id);
     }
 }

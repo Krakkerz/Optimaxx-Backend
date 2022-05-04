@@ -19,7 +19,7 @@ public class MovieService {
         return MovieResponse.of(movies);
     }
 
-    public MovieResponse getMovieById(String id) {
+    public MovieResponse getMovieById(Long id) {
         boolean movieDoesNotExist = movieRepository.existsById(id);
         //error stuff here
 
