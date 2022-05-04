@@ -12,11 +12,11 @@ import java.util.List;
 @NoArgsConstructor
 public class MovieResponse {
     private Long id;
-    private String name;
+    private String title;
 
     private MovieResponse(Movie movie) {
         this.id = movie.getId();
-        this.name = movie.getName();
+        this.title = movie.getTitle();
     }
 
     public static List<MovieResponse> of(List<Movie> entities) {

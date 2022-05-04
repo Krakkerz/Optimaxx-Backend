@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.time.Duration;
+import java.time.LocalDate;
 import java.util.Set;
 
 @Entity
@@ -16,13 +17,15 @@ public class Movie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
-    private String description;
+    private String title;
     private String category;
-    private int ageRange;
+    private Integer minimumAge;
     private Duration duration;
-    private double rating;
+    private LocalDate release;
+    private Double rating;
     private String picture;
+    private String trailer;
+    private String tagline;
 
     @OneToMany(mappedBy = "movie", fetch =FetchType.LAZY)
     private Set<Showing> showings = new java.util.LinkedHashSet<>();
