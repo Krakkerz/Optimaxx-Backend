@@ -17,7 +17,7 @@ public class Reservation {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private User user;
+    private Account account;
 
     @ManyToMany
     @JoinTable(
@@ -27,7 +27,7 @@ public class Reservation {
     private Set<Seat> seats = new java.util.LinkedHashSet<>();
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private Schedule schedule;
+    private Showing showing;
 
 }
 

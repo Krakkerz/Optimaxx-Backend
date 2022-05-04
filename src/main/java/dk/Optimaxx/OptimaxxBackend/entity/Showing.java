@@ -12,7 +12,7 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Schedule {
+public class Showing {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -21,7 +21,7 @@ public class Schedule {
     @ManyToOne(fetch = FetchType.LAZY)
     private Movie movie;
 
-    @OneToMany(mappedBy = "schedule", fetch =FetchType.LAZY)
+    @OneToMany(mappedBy = "showing", fetch =FetchType.LAZY)
     private Set<Reservation> reservations = new java.util.LinkedHashSet<>();
 
     @ManyToOne(fetch = FetchType.LAZY)

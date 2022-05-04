@@ -11,7 +11,7 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class User {
+public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -19,7 +19,7 @@ public class User {
     private String name;
     private String phoneNumber;
 
-    @OneToMany(mappedBy = "user", fetch =FetchType.LAZY)
+    @OneToMany(mappedBy = "account", fetch =FetchType.LAZY)
     private Set<Reservation> reservations = new java.util.LinkedHashSet<>();
 
 }
