@@ -8,10 +8,10 @@ We want to get the following done in this sprint:
   - [ ] Decide on tech stack (java version, docker, spring-security, front-end router)
 - Deploy the project 
   - [x] CI/CD for both frontend and backend, azure mysql database
-  - [ ] Install Springdoc
+  - [x] Install Springdoc
 - Develop the backend
-  - [ ] Implement the ER diagram in code
+  - [x] Implement the ER diagram in code
   - [ ] Begin work on Paginated Rest API (GET operations > POST/PUT/PATCH/DELETE)
-  - [ ] Create dummy data with configuration
+  - [x] Create dummy data with configuration
 - Develop the frontend
   - [ ] View static data on frontend
