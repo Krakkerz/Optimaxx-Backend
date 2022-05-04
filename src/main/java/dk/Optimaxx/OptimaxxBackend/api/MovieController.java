@@ -1,8 +1,11 @@
 package dk.Optimaxx.OptimaxxBackend.api;
 
+import dk.Optimaxx.OptimaxxBackend.DTO.MovieResponse;
 import dk.Optimaxx.OptimaxxBackend.service.MovieService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/movie")
@@ -10,4 +13,7 @@ import org.springframework.web.bind.annotation.*;
 @AllArgsConstructor
 public class MovieController {
     //add stuff here
+    private final MovieService movieService;
+
+    
 }
