@@ -15,5 +15,13 @@ public class MovieController {
     //add stuff here
     private final MovieService movieService;
 
-    
+    @GetMapping
+    public List<MovieResponse> getMovies(){
+        return movieService.getAllMovies();
+    }
+
+    @GetMapping("/{id}")
+    public MovieResponse getMovies(@PathVariable String id){
+        return movieService.getMovieById(id);
+    }
 }

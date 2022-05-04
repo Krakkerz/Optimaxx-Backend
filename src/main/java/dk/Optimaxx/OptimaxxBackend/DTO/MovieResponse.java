@@ -4,7 +4,6 @@ import dk.Optimaxx.OptimaxxBackend.entity.Movie;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
 
