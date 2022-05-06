@@ -1,9 +1,7 @@
 package dk.Optimaxx.OptimaxxBackend.DTO;
 
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import java.util.List;
 
@@ -25,17 +23,17 @@ public class ImdbMovieResponse {
     private String image;
     private String type;
     private String directors;
-    // private List<StarShort> directorList;
+    private List<StarShort> directorList;
     private String writers;
-    // private List<StarShort> writerList;
+    private List<StarShort> writerList;
     private String stars;
-    // private List<StarShort> starList;
+    private List<StarShort> starList;
     // private List<ActorShort> actorList;
     // private FullCastData fullCast;
     private String genres;
     // private List<KeyValueItem> genreList;
     private String companies;
-    // private List<CompanyShort> companyList;
+    private List<CompanyShort> companyList;
     private String countries;
     // private List<KeyValueItem> countryList;
     private String languages;
@@ -49,37 +47,70 @@ public class ImdbMovieResponse {
     // private PosterData posters;
     // private ImageData images;
     // private TrailerData trailer;
-    // private BoxOfficeShort boxOffice;
+     private BoxOfficeShort boxOffice;
     private String tagline;
     private String keywords;
     private List<String> keywordList;
-    // private List<SimilarShort> similars;
-    // private TvSeriesInfo tvSeriesInfo;
+    private List<SimilarShort> similars;
+    private TvSeriesInfo tvSeriesInfo;
     // private TvEpisodeInfo tvEpisodeInfo;
     private String errorMessage;
 }
 
 // TODO: Define more custom properties if needed
 
-//@NoArgsConstructor
-//@Data
-//class PosterDataItem {
-//    public string Id { get; set; }
-//    public string Link { get; set; }
-//    public double AspectRatio { get; set; }
-//    public string Language { get; set; }
-//    public int Width { get; set; }
-//    public int Height { get; set; }
-//}
-//
-//public class TvSeriesInfo
-//{
-//    public string YearEnd { set; get; }
-//    public string Creators { set; get; }
-//    public List<StarShort> CreatorList { get; set; }
-//    public List<string> Seasons { get; set; }
-//}
-//
+@NoArgsConstructor
+@Data
+class PosterDataItem {
+    public String id;
+    public String link;
+    public Double aspectRatio;
+    public String language;
+    public Integer width;
+    public Integer height;
+}
+
+@NoArgsConstructor
+@Data
+class TvSeriesInfo {
+    public String yearEnd;
+    public String creators;
+    public List<StarShort> creatorList;
+    public List<String> seasons;
+}
+
+@NoArgsConstructor
+@Data
+class SimilarShort {
+    public String id;
+    public String title;
+    public String image;
+    public String imdbRating;
+}
+
+@NoArgsConstructor
+@Data
+class StarShort {
+    private String id;
+    private String name;
+}
+
+@NoArgsConstructor
+@Data
+class BoxOfficeShort {
+    public String budget;
+    public String openingWeekendUSA;
+    public String grossUSA;
+    public String cumulativeWorldwideGross;
+}
+
+@NoArgsConstructor
+@Data
+class CompanyShort {
+    public String id;
+    public String name;
+}
+
 //public class TvEpisodeInfo
 //{
 //    public string SeriesId { get; set; }
@@ -93,33 +124,4 @@ public class ImdbMovieResponse {
 //
 //    public string PreviousEpisodeId { get; set; }
 //    public string NextEpisodeId { get; set; }
-//}
-//
-//public class SimilarShort
-//{
-//    public string Id { get; set; }
-//    public string Title { get; set; }
-//    public string Image { get; set; }
-//    public string IMDbRating { get; set; }
-//}
-//
-//public class StarShort
-//{
-//    public string Id { get; set; }
-//    public string Name { get; set; }
-//}
-//
-//public class BoxOfficeShort
-//{
-//    public string Budget { get; set; }
-//    public string OpeningWeekendUSA { get; set; }
-//    public string GrossUSA { get; set; }
-//    public string CumulativeWorldwideGross { get; set; }
-//}
-//
-//public class CompanyShort
-//{
-//    public string Id { get; set; }
-//    public string Name { get; set; }
-//}
 //}
