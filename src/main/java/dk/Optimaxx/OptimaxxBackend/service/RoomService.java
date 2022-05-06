@@ -20,7 +20,7 @@ public class RoomService {
         return RoomResponse.of(rooms);
     }
 
-    public RoomResponse getRoomById(String id) {
+    public RoomResponse getRoomById(Long id) {
         boolean roomDoesNotExist = roomRepository.existsById(id);
         //error stuff here
 

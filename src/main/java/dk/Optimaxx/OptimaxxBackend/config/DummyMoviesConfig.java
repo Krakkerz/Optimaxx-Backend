@@ -1,9 +1,7 @@
 package dk.Optimaxx.OptimaxxBackend.config;
 
-import dk.Optimaxx.OptimaxxBackend.entity.Account;
-import dk.Optimaxx.OptimaxxBackend.entity.Movie;
-import dk.Optimaxx.OptimaxxBackend.repository.AccountRepository;
-import dk.Optimaxx.OptimaxxBackend.repository.MovieRepository;
+import dk.Optimaxx.OptimaxxBackend.entity.*;
+import dk.Optimaxx.OptimaxxBackend.repository.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -18,6 +16,9 @@ import java.util.List;
 public class DummyMoviesConfig implements ApplicationRunner {
     private final MovieRepository movieRepository;
     private final AccountRepository accountRepository;
+    private final CinemaRepository cinemaRepository;
+    private final RoomRepository roomRepository;
+    private final SeatRepository seatRepository;
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
@@ -66,5 +67,33 @@ public class DummyMoviesConfig implements ApplicationRunner {
                 .build();
 
         accountRepository.save(testman1);
+
+        Cinema cinema1 = Cinema.builder()
+                .name("CineMark")
+                .Location("Mark's baghave")
+                .build();
+
+        cinemaRepository.save(cinema1);
+
+        Room room1 = Room.builder()
+                .cinema(cinema1)
+                .description("det er ikke så meget et rum og mere et stykke græs")
+                .build();
+        roomRepository.save(room1);
+
+        //pls make me pretty
+        int n = 0;
+        while(n<= 10) {
+            for (int i = 1; i<=20;i++) {
+                Seat CurSeat = Seat.builder()
+                        .room(room1)
+                        .type("standard")
+                        .build();
+
+                seatRepository.save(CurSeat);
+            }
+            n++;
+        }
+
     }
 }
