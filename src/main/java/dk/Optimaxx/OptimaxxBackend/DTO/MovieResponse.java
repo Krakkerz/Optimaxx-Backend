@@ -11,7 +11,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 public class MovieResponse {
-    private Long id;
+    private String id;
     private String title;
 
     private MovieResponse(Movie movie) {

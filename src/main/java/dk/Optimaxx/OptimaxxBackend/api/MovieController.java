@@ -22,12 +22,12 @@ public class MovieController {
     }
 
     @GetMapping("/{id}")
-    public MovieResponse getMovies(@PathVariable Long id){
+    public MovieResponse getMovies(@PathVariable String id){
         return movieService.getMovieById(id);
     }
 
     @PostMapping("/{imdb_id}")
-    public ImdbMovieResponse importMovieFromImdb(@PathVariable String imdb_id) {
+    public MovieResponse importMovieFromImdb(@PathVariable String imdb_id) {
         return movieService.importMovieFromImdb(imdb_id);
     }
 }

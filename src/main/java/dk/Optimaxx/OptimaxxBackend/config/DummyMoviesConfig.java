@@ -24,6 +24,7 @@ public class DummyMoviesConfig implements ApplicationRunner {
     public void run(ApplicationArguments args) throws Exception {
         List<Movie> movies = List.of(
                 Movie.builder()
+                        .id("myid1")
                         .title("Encanto")
                         .tagline("There's a little magic in all of us ...almost all of us.")
                         .category("Animation, Comedy, Family, Fantasy")
@@ -35,6 +36,7 @@ public class DummyMoviesConfig implements ApplicationRunner {
                         .trailer("https://www.youtube.com/watch?v=CaimKeDcudo")
                         .build(),
                 Movie.builder()
+                        .id("myid2")
                         .title("Dune")
                         .tagline("It begins.")
                         .category("Science Fiction, Adventure")
@@ -46,6 +48,7 @@ public class DummyMoviesConfig implements ApplicationRunner {
                         .trailer("https://www.youtube.com/watch?v=n9xhJrPXop4")
                         .build(),
                 Movie.builder()
+                        .id("myid3")
                         .title("The Matrix Resurrections")
                         .tagline("Return to the source.")
                         .category("Science Fiction, Action, Adventure")

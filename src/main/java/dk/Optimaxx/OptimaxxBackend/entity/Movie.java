@@ -15,8 +15,7 @@ import java.util.Set;
 @Builder
 public class Movie {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String id;
     private String title;
     private String category;
     private Integer minimumAge;
