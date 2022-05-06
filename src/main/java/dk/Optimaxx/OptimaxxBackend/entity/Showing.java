@@ -21,7 +21,7 @@ public class Showing {
     @ManyToOne(fetch = FetchType.LAZY)
     private Movie movie;
 
-    @OneToMany(mappedBy = "showing", fetch =FetchType.LAZY)
+    @OneToMany(mappedBy = "showing", fetch =FetchType.LAZY, cascade = CascadeType.REMOVE)
     private Set<Reservation> reservations = new java.util.LinkedHashSet<>();
 
     @ManyToOne(fetch = FetchType.LAZY)

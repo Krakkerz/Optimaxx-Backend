@@ -19,7 +19,7 @@ public class Account {
     private String name;
     private String phoneNumber;
 
-    @OneToMany(mappedBy = "account", fetch =FetchType.LAZY)
+    @OneToMany(mappedBy = "account", fetch =FetchType.LAZY, cascade = CascadeType.REMOVE)
     private Set<Reservation> reservations = new java.util.LinkedHashSet<>();
 
 }

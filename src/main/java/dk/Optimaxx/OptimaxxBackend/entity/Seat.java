@@ -18,7 +18,7 @@ public class Seat {
 
     private String type;
 
-    @ManyToMany(mappedBy = "seats")
+    @ManyToMany(mappedBy = "seats", cascade = CascadeType.REMOVE)
     private Set<Reservation> reservations = new java.util.LinkedHashSet<>();
 
     @ManyToOne(fetch = FetchType.LAZY)
