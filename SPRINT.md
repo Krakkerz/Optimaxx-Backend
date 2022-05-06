@@ -34,6 +34,7 @@ Who did what:
 - Mark
   - initial ER diagram
   - entities and relational mapping
+  - springdoc implementation
 
 
 ## Sprint #2 (W19 2022)
