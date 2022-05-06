@@ -46,7 +46,7 @@ Who did what in this sprint:
   - CI/CD for backend
   - Host MySQL on Azure
   - Setup entities, repositories, services classes etc. 
- - Malthe
+- Malthe
   - CI/CD for frontend
   - Static data using json mock server
   - Setup grid for movie template
