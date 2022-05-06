@@ -1,6 +1,5 @@
 package dk.Optimaxx.OptimaxxBackend.service;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -8,26 +7,17 @@ import dk.Optimaxx.OptimaxxBackend.DTO.ImdbMovieResponse;
 import dk.Optimaxx.OptimaxxBackend.DTO.MovieResponse;
 import dk.Optimaxx.OptimaxxBackend.entity.Movie;
 import dk.Optimaxx.OptimaxxBackend.repository.MovieRepository;
-import io.swagger.v3.core.util.ObjectMapperFactory;
 import lombok.AllArgsConstructor;
-import org.apache.tomcat.util.json.JSONParser;
-import org.apache.tomcat.util.json.ParseException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Pageable;
-import org.springframework.http.codec.json.Jackson2JsonDecoder;
 import org.springframework.stereotype.Service;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
@@ -35,12 +25,12 @@ public class MovieService {
     private final MovieRepository movieRepository;
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
-    public List<MovieResponse> getAllMovies(Pageable pageable){
+    public List<MovieResponse> getAllMovies(Pageable pageable) {
         List<Movie> movies = movieRepository.findAll();
         return MovieResponse.of(movies);
     }
 
-    public MovieResponse getMovieById(Long id) {
+    public MovieResponse getMovieById(String id) {
         boolean movieDoesNotExist = movieRepository.existsById(id);
         //error stuff here
 
@@ -49,10 +39,11 @@ public class MovieService {
     }
 
 
-     public ImdbMovieResponse importMovieFromImdb(String imdb_id) {
-        String apiKey = "k_r62acbmv";
+    public MovieResponse importMovieFromImdb(String imdb_id) {
+        String apiKey = "k_bwci9c2f";
         String apiUrl = "https://imdb-api.com/en/API/Title";
-        String options = "Posters,Trailer,Ratings,";
+        // All the options are: "FullActor,FullCast,Posters,Images,Trailer,Ratings,Wikipedia,"
+        String options = "Images,Trailer,";
 
         String requestString = "%s/%s/%s/%s".formatted(apiUrl, apiKey, imdb_id, options);
 
@@ -80,14 +71,8 @@ public class MovieService {
             throw new RuntimeException();
         }
 
-        return imdbMovieResponse;
-
-        /* TODO:
-            make ImdbMovieResponse into a Movie
-            save the movie to database
-            return saved movie as MovieResponse
-         */
-
+        // TODO: Handle if movie already exists
+        return MovieResponse.of(movieRepository.save(imdbMovieResponse.toMovie()));
     }
 }
 

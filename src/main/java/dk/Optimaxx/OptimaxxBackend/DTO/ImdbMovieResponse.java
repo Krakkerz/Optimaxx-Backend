@@ -1,5 +1,6 @@
 package dk.Optimaxx.OptimaxxBackend.DTO;
 
+import dk.Optimaxx.OptimaxxBackend.entity.Movie;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -39,15 +40,15 @@ public class ImdbMovieResponse {
     private String languages;
     // private List<KeyValueItem> languageList;
     private String contentRating;
-    private String imdbRating;
-    private String imdbRatingVotes;
+    private String imDbRating;
+    private String imDbRatingVotes;
     private String metacriticRating;
-    // private RatingData ratings;
+    private RatingData ratings;
     // private WikipediaData wikipedia;
     // private PosterData posters;
     // private ImageData images;
     // private TrailerData trailer;
-     private BoxOfficeShort boxOffice;
+    private BoxOfficeShort boxOffice;
     private String tagline;
     private String keywords;
     private List<String> keywordList;
@@ -55,6 +56,16 @@ public class ImdbMovieResponse {
     private TvSeriesInfo tvSeriesInfo;
     // private TvEpisodeInfo tvEpisodeInfo;
     private String errorMessage;
+
+    // TODO: Make this converter more complete
+    public Movie toMovie() {
+        return Movie.builder()
+                .id(this.id)
+                .title(this.title)
+                .picture(this.image)
+                .category(this.genres)
+                .build();
+    }
 }
 
 // TODO: Define more custom properties if needed
@@ -85,7 +96,7 @@ class SimilarShort {
     public String id;
     public String title;
     public String image;
-    public String imdbRating;
+    public String imDbRating;
 }
 
 @NoArgsConstructor
@@ -111,17 +122,21 @@ class CompanyShort {
     public String name;
 }
 
-//public class TvEpisodeInfo
-//{
-//    public string SeriesId { get; set; }
-//    public string SeriesTitle { get; set; }
-//    public string SeriesFullTitle { get; set; }
-//    public string SeriesYear { get; set; }
-//    public string SeriesYearEnd { get; set; }
-//
-//    public string SeasonNumber { get; set; }
-//    public string EpisodeNumber { get; set; }
-//
-//    public string PreviousEpisodeId { get; set; }
-//    public string NextEpisodeId { get; set; }
-//}
+@NoArgsConstructor
+@Data
+class RatingData {
+    public String imDbId;
+    public String title;
+    public String fullTitle;
+    public String type;
+
+    public String year;
+    public String imDb;
+    public String metacritic;
+    public String theMovieDb;
+    public String rottenTomatoes;
+
+    public String filmAffinity;
+    public String errorMessage;
+}
+
