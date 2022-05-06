@@ -88,6 +88,8 @@ public class DummyMoviesConfig implements ApplicationRunner {
                 Seat CurSeat = Seat.builder()
                         .room(room1)
                         .type("standard")
+                        .seatNumber(i)
+                        .seatRow(n)
                         .build();
 
                 seatRepository.save(CurSeat);
