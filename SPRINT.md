@@ -53,5 +53,10 @@ Who did what in this sprint:
   - Created function to fetch movie data
 
 ## Sprint #2 (W19 2022)
+We have decided to focus our work on showing which movies are in the cinema and getting reservations to work.
+
 We want to get the following done in this sprint:
-- idk man
+- Figure out how reservation api should work and begin work on it
+- Endpoint to tell the server to import a movie from imdb or themoviedb
+- Begin writing a few tests
+- 
