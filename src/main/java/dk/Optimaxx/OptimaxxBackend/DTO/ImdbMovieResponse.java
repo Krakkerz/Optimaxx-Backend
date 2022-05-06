@@ -67,7 +67,7 @@ public class ImdbMovieResponse {
                 .category(this.genres)
                 .trailer(this.trailer.linkEmbed)
                 .rating(this.imDbRating)
-                .duration(Duration.ZERO.plusMinutes(Long.parseLong(this.runtimeMins)))
+                .duration(this.runtimeStr)//(Duration.ZERO.plusMinutes(Long.parseLong(this.runtimeMins)))
                 .plot(this.plot)
                 .build();
     }
