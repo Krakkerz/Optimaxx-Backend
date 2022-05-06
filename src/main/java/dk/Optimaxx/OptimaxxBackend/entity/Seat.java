@@ -17,6 +17,8 @@ public class Seat {
     private Long id;
 
     private String type;
+    private int seatNumber;
+    private int seatRow;
 
     @ManyToMany(mappedBy = "seats", cascade = CascadeType.REMOVE)
     private Set<Reservation> reservations = new java.util.LinkedHashSet<>();
