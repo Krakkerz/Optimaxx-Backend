@@ -1,6 +1,8 @@
 package dk.Optimaxx.OptimaxxBackend.config;
 
+import dk.Optimaxx.OptimaxxBackend.entity.Account;
 import dk.Optimaxx.OptimaxxBackend.entity.Movie;
+import dk.Optimaxx.OptimaxxBackend.repository.AccountRepository;
 import dk.Optimaxx.OptimaxxBackend.repository.MovieRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.ApplicationArguments;
@@ -15,6 +17,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class DummyMoviesConfig implements ApplicationRunner {
     private final MovieRepository movieRepository;
+    private final AccountRepository accountRepository;
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
@@ -56,5 +59,12 @@ public class DummyMoviesConfig implements ApplicationRunner {
 
         movieRepository.saveAll(movies);
 
+        Account testman1 = Account.builder()
+                .email("testman1@email.com")
+                .name("Test Johnson")
+                .phoneNumber("88888888")
+                .build();
+
+        accountRepository.save(testman1);
     }
 }
