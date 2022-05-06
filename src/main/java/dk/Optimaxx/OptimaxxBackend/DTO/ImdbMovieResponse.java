@@ -4,6 +4,7 @@ import dk.Optimaxx.OptimaxxBackend.entity.Movie;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.Duration;
 import java.util.List;
 
 @NoArgsConstructor
@@ -40,14 +41,14 @@ public class ImdbMovieResponse {
     private String languages;
     // private List<KeyValueItem> languageList;
     private String contentRating;
-    private String imDbRating;
+    private Double imDbRating;
     private String imDbRatingVotes;
     private String metacriticRating;
     private RatingData ratings;
     // private WikipediaData wikipedia;
     // private PosterData posters;
     // private ImageData images;
-    // private TrailerData trailer;
+    private TrailerData trailer;
     private BoxOfficeShort boxOffice;
     private String tagline;
     private String keywords;
@@ -64,6 +65,10 @@ public class ImdbMovieResponse {
                 .title(this.title)
                 .picture(this.image)
                 .category(this.genres)
+                .trailer(this.trailer.linkEmbed)
+                .rating(this.imDbRating)
+                .duration(Duration.ZERO.plusMinutes(Long.parseLong(this.runtimeMins)))
+                .plot(this.plot)
                 .build();
     }
 }
@@ -137,6 +142,25 @@ class RatingData {
     public String rottenTomatoes;
 
     public String filmAffinity;
+    public String errorMessage;
+}
+
+@NoArgsConstructor
+@Data
+class TrailerData
+{
+    public String imDbId;
+    public String title;
+    public String fullTitle;
+    public String type;
+    public String year ;
+    public String videoId;
+    public String videoTitle;
+    public String videoDescription;
+    public String thumbnailUrl;
+    public String uploadDate;
+    public String link;
+    public String linkEmbed ;
     public String errorMessage;
 }
 

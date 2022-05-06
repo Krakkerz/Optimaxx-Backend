@@ -25,6 +25,7 @@ public class Movie {
     private String picture;
     private String trailer;
     private String tagline;
+    private String plot;
 
     @OneToMany(mappedBy = "movie", fetch =FetchType.LAZY, cascade = CascadeType.REMOVE)
     private Set<Showing> showings = new java.util.LinkedHashSet<>();
