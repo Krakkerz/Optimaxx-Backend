@@ -23,7 +23,7 @@ public class RoomController {
     }
 
     @GetMapping("/{id}")
-    public RoomResponse getRooms(@PathVariable String id){
+    public RoomResponse getRooms(@PathVariable Long id){
         return roomService.getRoomById(id);
     }
 }
