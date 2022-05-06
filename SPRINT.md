@@ -14,4 +14,22 @@ We want to get the following done in this sprint:
   - [x] Begin work on Paginated Rest API (GET operations > POST/PUT/PATCH/DELETE)
   - [x] Create dummy data with configuration
 - Develop the frontend
-  - [ ] View static data on frontend
+  - [x] View static data on frontend
+
+We have completed the following so far in this sprint:
+- Developed an initial ER diagram
+- Described a few user stories
+- Decided on a tech stack
+  - Java 17 without Docker, sinze Azure supports it natively now
+  - Spring Security since we want to have a user make a reservation and this seems the most feasible
+  - We will use Navigo as a frontend router
+  - MySQL 8
+- CI/CD has been set up for both frontend and backend
+- Springdoc has been installed for API documentation
+- GET endpoints for movies have been created
+- Manually entered a few movies as dummy data
+- Frontend is able to render som static data, but it's still very early in the process
+
+## Sprint #2 (W19 2022)
+We want to get the following done in this sprint:
+- idk man
