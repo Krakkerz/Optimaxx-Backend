@@ -32,8 +32,8 @@ We have completed the following so far in this sprint:
 
 Who did what:
 - Mark
- - initial ER diagram
- - entities and relational mapping
+  - initial ER diagram
+  - entities and relational mapping
 
 
 ## Sprint #2 (W19 2022)
