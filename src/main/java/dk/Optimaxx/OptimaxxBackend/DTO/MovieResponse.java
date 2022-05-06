@@ -1,6 +1,7 @@
 package dk.Optimaxx.OptimaxxBackend.DTO;
 
 import dk.Optimaxx.OptimaxxBackend.entity.Movie;
+import dk.Optimaxx.OptimaxxBackend.utilities.DurationFormatter;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -33,7 +34,7 @@ public class MovieResponse {
         this.category = movie.getCategory();
         this.trailer = movie.getTrailer();
         this.rating = movie.getRating();
-        this.duration = movie.getDuration().toString();
+        this.duration = DurationFormatter.format(movie.getDuration());
         this.plot = movie.getPlot();
     }
 

@@ -19,7 +19,7 @@ public class Movie {
     private String title;
     private String category;
     private Integer minimumAge;
-    private String duration;
+    private Duration duration;
     private LocalDate releaseDate;
     private Double rating;
     private String picture;
