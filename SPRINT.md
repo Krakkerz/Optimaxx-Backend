@@ -42,6 +42,10 @@ Who did what in this sprint:
   - describe user stories
   - entering dummy data
   - layout and styling on frontend
+- Frederik
+  - CI/CD for backend
+  - Host MySQL on Azure
+  - Setup entities, repositories, services classes etc. 
 
 ## Sprint #2 (W19 2022)
 We want to get the following done in this sprint:
