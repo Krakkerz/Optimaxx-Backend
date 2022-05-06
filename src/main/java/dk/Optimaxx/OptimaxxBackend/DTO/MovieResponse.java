@@ -17,7 +17,7 @@ public class MovieResponse {
     private String title;
     private String category;
     private Integer minimumAge;
-    private Duration duration;
+    private String duration;
     private LocalDate releaseDate;
     private Double rating;
     private String picture;
@@ -33,7 +33,7 @@ public class MovieResponse {
         this.category = movie.getCategory();
         this.trailer = movie.getTrailer();
         this.rating = movie.getRating();
-        this.duration = movie.getDuration();
+        this.duration = movie.getDuration().toString();
         this.plot = movie.getPlot();
     }
 
