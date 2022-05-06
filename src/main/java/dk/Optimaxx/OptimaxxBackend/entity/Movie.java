@@ -27,7 +27,7 @@ public class Movie {
     private String trailer;
     private String tagline;
 
-    @OneToMany(mappedBy = "movie", fetch =FetchType.LAZY)
+    @OneToMany(mappedBy = "movie", fetch =FetchType.LAZY, cascade = CascadeType.REMOVE)
     private Set<Showing> showings = new java.util.LinkedHashSet<>();
 }
 
