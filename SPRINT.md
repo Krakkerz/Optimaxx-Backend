@@ -46,6 +46,11 @@ Who did what in this sprint:
   - CI/CD for backend
   - Host MySQL on Azure
   - Setup entities, repositories, services classes etc. 
+ - Malthe
+  - CI/CD for frontend
+  - Static data using json mock server
+  - Setup grid for movie template
+  - Created function to fetch movie data
 
 ## Sprint #2 (W19 2022)
 We want to get the following done in this sprint:
