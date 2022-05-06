@@ -29,6 +29,9 @@ erDiagram
         Long id PK
         Long room_id FK
         
+        Long seat_row
+        Long seat_number
+        
         Enum type
     }
     
