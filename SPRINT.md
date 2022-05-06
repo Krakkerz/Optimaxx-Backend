@@ -59,4 +59,5 @@ We want to get the following done in this sprint:
 - Figure out how reservation api should work and begin work on it
 - Endpoint to tell the server to import a movie from imdb or themoviedb
 - Begin writing a few tests
-- 
+- Figure out how frontend should look/how the user should navigate (maybe produce a few wireframes?)
+- Begin work on implementing wireframes
