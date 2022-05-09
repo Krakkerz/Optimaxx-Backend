@@ -29,6 +29,6 @@ public class ShowingController {
         return showingService.getShowingById(id);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("reservations/{id}")
     public Set<Seat> getEmptySeats(@PathVariable Long id) {return showingService.getEmptySeats(id);}
 }
