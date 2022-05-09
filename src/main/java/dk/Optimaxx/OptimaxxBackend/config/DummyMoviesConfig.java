@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Profile;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.stream.IntStream;
 
 @Configuration
 @RequiredArgsConstructor
@@ -85,21 +86,18 @@ public class DummyMoviesConfig implements ApplicationRunner {
                 .build();
         roomRepository.save(room1);
 
-        //pls make me pretty
-        int n = 0;
-        while(n<= 10) {
-            for (int i = 1; i<=20;i++) {
-                Seat CurSeat = Seat.builder()
-                        .room(room1)
-                        .type("standard")
-                        .seatNumber(i)
-                        .seatRow(n)
-                        .build();
-
-                seatRepository.save(CurSeat);
-            }
-            n++;
-        }
+        IntStream.rangeClosed(1, 24).forEach(i -> { // seat numbers goes along the screen
+            IntStream.rangeClosed(1, 15).forEach(j -> { // row numbers goes away from the screen
+                seatRepository.save(
+                        Seat.builder()
+                                .room(room1)
+                                .type("standard")
+                                .seatNumber(i)
+                                .seatRow(j)
+                                .build()
+                );
+            });
+        });
 
     }
 }
