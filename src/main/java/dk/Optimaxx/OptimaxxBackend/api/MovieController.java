@@ -17,7 +17,7 @@ public class MovieController {
     private final MovieService movieService;
 
     @GetMapping
-    public List<MovieResponse> getMovies(Pageable pageable){
+    public List<MovieResponse> getMovies(Pageable pageable) {
         return movieService.getAllMovies(pageable);
     }
 
