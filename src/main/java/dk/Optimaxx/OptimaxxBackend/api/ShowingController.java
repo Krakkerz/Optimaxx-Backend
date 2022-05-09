@@ -1,6 +1,7 @@
 package dk.Optimaxx.OptimaxxBackend.api;
 
 import dk.Optimaxx.OptimaxxBackend.DTO.ShowingResponse;
+import dk.Optimaxx.OptimaxxBackend.entity.Seat;
 import dk.Optimaxx.OptimaxxBackend.service.ShowingService;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/api/showings")
@@ -27,4 +29,6 @@ public class ShowingController {
         return showingService.getShowingById(id);
     }
 
+    @GetMapping("/{id}")
+    public Set<Seat> getEmptySeats(@PathVariable Long id) {return showingService.getEmptySeats(id);}
 }
