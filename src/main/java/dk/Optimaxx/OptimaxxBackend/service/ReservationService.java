@@ -3,6 +3,7 @@ package dk.Optimaxx.OptimaxxBackend.service;
 import dk.Optimaxx.OptimaxxBackend.DTO.ReservationRequest;
 import dk.Optimaxx.OptimaxxBackend.DTO.ReservationResponse;
 import dk.Optimaxx.OptimaxxBackend.entity.Reservation;
+import dk.Optimaxx.OptimaxxBackend.error.ReservationDoesNotExistException;
 import dk.Optimaxx.OptimaxxBackend.repository.ReservationRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Pageable;
@@ -21,8 +22,9 @@ public class ReservationService {
     }
 
     public ReservationResponse getReservationById(Long id) {
-        boolean reservationDoesNotExist = reservationRepository.existsById(id);
-        //error stuff here
+        if (!reservationRepository.existsById(id)) {
+            throw new ReservationDoesNotExistException();
+        }
 
         Reservation reservation = reservationRepository.getById(id);
         return ReservationResponse.of(reservation);
