@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 
 import java.time.Duration;
 import java.time.LocalDate;
@@ -44,7 +45,7 @@ public class DummyMoviesConfig implements ApplicationRunner {
                         .duration(Duration.ofHours(2L).plusMinutes(35L))
                         .rating(0.79)
                         .releaseDate(LocalDate.parse("2021-09-16"))
-                        .picture("https://www.themoviedb.org/t/p/w1280/4j0PNHkMr5ax3IA8tjtxcmPU3QT.jpg")
+                        .picture("https://www.themoviedb.org/t/p/w1280/d5NXSklXo0qyIYkgV94XAgMIckC.jpg")
                         .trailer("https://www.youtube.com/watch?v=n9xhJrPXop4")
                         .build(),
                 Movie.builder()
@@ -56,7 +57,7 @@ public class DummyMoviesConfig implements ApplicationRunner {
                         .duration(Duration.ofHours(2L).plusMinutes(28L))
                         .rating(0.67)
                         .releaseDate(LocalDate.parse("2021-12-22"))
-                        .picture("https://www.themoviedb.org/t/p/w1280/d5NXSklXo0qyIYkgV94XAgMIckC.jpg")
+                        .picture("https://www.themoviedb.org/t/p/w1280/8c4a8kE7PizaGQQnditMmI1xbRp.jpg")
                         .trailer("https://www.youtube.com/watch?v=9ix7TUGVYIo")
                         .build()
                 );

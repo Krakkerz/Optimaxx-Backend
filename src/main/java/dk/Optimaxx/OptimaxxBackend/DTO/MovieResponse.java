@@ -8,6 +8,7 @@ import lombok.Setter;
 
 import java.time.Duration;
 import java.time.LocalDate;
+import java.util.Collection;
 import java.util.List;
 
 @Getter
@@ -38,7 +39,7 @@ public class MovieResponse {
         this.plot = movie.getPlot();
     }
 
-    public static List<MovieResponse> of(List<Movie> entities) {
+    public static List<MovieResponse> of(Collection<Movie> entities) {
         return entities.stream().map(MovieResponse::new).toList();
     }
 
