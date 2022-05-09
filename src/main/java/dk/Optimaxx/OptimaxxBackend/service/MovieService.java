@@ -37,6 +37,9 @@ public class MovieService {
         Movie movie = movieRepository.getById(id);
         return MovieResponse.of(movie);
     }
+    public Long countMovies(){
+        return movieRepository.count();
+    }
 
 
     public MovieResponse importMovieFromImdb(String imdb_id) {
