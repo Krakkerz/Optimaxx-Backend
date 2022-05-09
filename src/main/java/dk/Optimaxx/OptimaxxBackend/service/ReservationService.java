@@ -1,5 +1,6 @@
 package dk.Optimaxx.OptimaxxBackend.service;
 
+import dk.Optimaxx.OptimaxxBackend.DTO.ReservationRequest;
 import dk.Optimaxx.OptimaxxBackend.DTO.ReservationResponse;
 import dk.Optimaxx.OptimaxxBackend.entity.Reservation;
 import dk.Optimaxx.OptimaxxBackend.repository.ReservationRepository;
@@ -24,6 +25,12 @@ public class ReservationService {
         //error stuff here
 
         Reservation reservation = reservationRepository.getById(id);
+        return ReservationResponse.of(reservation);
+    }
+
+    public ReservationResponse addReservation(ReservationRequest request) {
+        Reservation reservation = reservationRepository.save(new Reservation(request));
+
         return ReservationResponse.of(reservation);
     }
 }
