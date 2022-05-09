@@ -3,5 +3,5 @@ package dk.Optimaxx.OptimaxxBackend.repository;
 import dk.Optimaxx.OptimaxxBackend.entity.Reservation;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface ReservationRepository extends JpaRepository<Reservation, String> {
+public interface ReservationRepository extends JpaRepository<Reservation, Long> {
 }
