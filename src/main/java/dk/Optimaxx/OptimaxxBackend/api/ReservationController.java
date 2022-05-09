@@ -1,6 +1,8 @@
 package dk.Optimaxx.OptimaxxBackend.api;
 
+import dk.Optimaxx.OptimaxxBackend.DTO.ReservationRequest;
 import dk.Optimaxx.OptimaxxBackend.DTO.ReservationResponse;
+import dk.Optimaxx.OptimaxxBackend.entity.Reservation;
 import dk.Optimaxx.OptimaxxBackend.service.ReservationService;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Pageable;
@@ -23,6 +25,11 @@ public class ReservationController {
     @GetMapping("/{id}")
     public ReservationResponse getReservations(@PathVariable Long id){
         return reservationService.getReservationById(id);
+    }
+
+    @PostMapping
+    public ReservationResponse addReservation(ReservationRequest request) {
+        return reservationService.addReservation(request);
     }
 
 
