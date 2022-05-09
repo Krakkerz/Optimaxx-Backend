@@ -26,6 +26,11 @@ public class MovieController {
         return movieService.getMovieById(id);
     }
 
+    @GetMapping("/count")
+    public Long countMovies (){
+        return movieService.countMovies();
+    }
+
     @PostMapping("/{imdb_id}")
     public MovieResponse importMovieFromImdb(@PathVariable String imdb_id) {
         return movieService.importMovieFromImdb(imdb_id);
