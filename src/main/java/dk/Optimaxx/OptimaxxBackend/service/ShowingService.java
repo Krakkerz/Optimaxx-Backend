@@ -5,6 +5,7 @@ import dk.Optimaxx.OptimaxxBackend.DTO.ShowingResponse;
 import dk.Optimaxx.OptimaxxBackend.entity.Seat;
 import dk.Optimaxx.OptimaxxBackend.entity.Reservation;
 import dk.Optimaxx.OptimaxxBackend.entity.Showing;
+import dk.Optimaxx.OptimaxxBackend.repository.ReservationRepository;
 import dk.Optimaxx.OptimaxxBackend.repository.ShowingRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -17,6 +18,7 @@ import java.util.Set;
 @RequiredArgsConstructor
 public class ShowingService {
     private final ShowingRepository showingRepository;
+    private final ReservationRepository reservationRepository;
 
     public List<ShowingResponse> getAllShowings() {
         return ShowingResponse.of(showingRepository.findAll());
@@ -29,6 +31,9 @@ public class ShowingService {
 
     public Set<Seat> getEmptySeats(Long id) {
         ShowingResponse showingResponse = getShowingById(id);
+        ShowingResponse.of((Showing) reservationRepository.findByShowingIs(id));
+
+
         // TODO: compare and exclude with reserved seats somewhere, but where? ;-;
         return showingResponse.getRoom().getSeats();
     }
