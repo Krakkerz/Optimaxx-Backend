@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import dk.Optimaxx.OptimaxxBackend.DTO.ImdbMovieResponse;
 import dk.Optimaxx.OptimaxxBackend.DTO.MovieResponse;
 import dk.Optimaxx.OptimaxxBackend.entity.Movie;
+import dk.Optimaxx.OptimaxxBackend.error.MovieDoesNotExistException;
 import dk.Optimaxx.OptimaxxBackend.repository.MovieRepository;
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
@@ -31,8 +32,10 @@ public class MovieService {
     }
 
     public MovieResponse getMovieById(String id) {
-        boolean movieDoesNotExist = movieRepository.existsById(id);
-        //error stuff here
+        if (!movieRepository.existsById(id)) {
+            throw new MovieDoesNotExistException();
+        }
+
 
         Movie movie = movieRepository.getById(id);
         return MovieResponse.of(movie);
