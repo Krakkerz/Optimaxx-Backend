@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Collection;
 import java.util.List;
 
 @Getter
@@ -19,7 +20,7 @@ public class RoomResponse {
         this.description = description;
     }
 
-    public static List<RoomResponse> of(List<Room> entities) {
+    public static List<RoomResponse> of(Collection<Room> entities) {
         return entities.stream().map(RoomResponse::new).toList();
     }
 

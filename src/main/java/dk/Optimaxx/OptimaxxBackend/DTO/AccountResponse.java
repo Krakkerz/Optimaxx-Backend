@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Collection;
 import java.util.List;
 
 @Getter
@@ -22,7 +23,7 @@ public class AccountResponse {
         this.phonenumber = account.getPhoneNumber();
     }
 
-    public static List<AccountResponse> of(List<Account> entities) {
+    public static List<AccountResponse> of(Collection<Account> entities) {
         return entities.stream().map(AccountResponse::new).toList();
     }
 
