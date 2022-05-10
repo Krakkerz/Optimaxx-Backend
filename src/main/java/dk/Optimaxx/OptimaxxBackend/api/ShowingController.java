@@ -16,7 +16,6 @@ import java.util.Set;
 @RestController
 @RequestMapping("/api/showings")
 @RequiredArgsConstructor
-@CrossOrigin
 public class ShowingController {
     private final ShowingService showingService;
 
