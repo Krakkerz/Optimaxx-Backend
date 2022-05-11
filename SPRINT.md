@@ -67,6 +67,9 @@ Who did what in this sprint:
   - initial backend reservation implementation
   - few tests
 - Simon
+  - Visual seat reservation frontend
+  - Dummy Data Config
+  - ShowingResponse and ShowingService on backend
 - Frederik
 - Malthe
 
