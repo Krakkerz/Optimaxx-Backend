@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.List;
 import java.util.Set;
@@ -17,6 +18,8 @@ import java.util.Set;
 public class ShowingResponse {
     private Long id;
     private Room room;
+    private LocalDateTime startTime;
+    private int baseprice;
 
     private ShowingResponse(Showing showing) {
     }
