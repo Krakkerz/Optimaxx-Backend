@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 
 import java.time.Duration;
 import java.time.LocalDate;
@@ -18,6 +19,7 @@ import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.IntStream;
 
 @Configuration
+@Profile({"development", "production", "staging"})
 @RequiredArgsConstructor
 public class DummyDataConfig implements ApplicationRunner {
     private final MovieRepository movieRepository;
@@ -173,14 +175,14 @@ public class DummyDataConfig implements ApplicationRunner {
 
     private List<Showing> makeShowingData() {
         List<LocalDateTime> times = List.of(
-                LocalDateTime.now().plusDays(2L).withHour(17).withMinute(0),
-                LocalDateTime.now().plusDays(2L).withHour(17).withMinute(30),
-                LocalDateTime.now().plusDays(2L).withHour(18).withMinute(0),
-                LocalDateTime.now().plusDays(2L).withHour(18).withMinute(30),
-                LocalDateTime.now().plusDays(2L).withHour(19).withMinute(0),
-                LocalDateTime.now().plusDays(2L).withHour(19).withMinute(30),
-                LocalDateTime.now().plusDays(2L).withHour(20).withMinute(0),
-                LocalDateTime.now().plusDays(2L).withHour(20).withMinute(30)
+                LocalDateTime.now().plusDays(2L).withHour(17).withMinute(0).withSecond(0).withNano(0),
+                LocalDateTime.now().plusDays(2L).withHour(17).withMinute(30).withSecond(0).withNano(0),
+                LocalDateTime.now().plusDays(2L).withHour(18).withMinute(0).withSecond(0).withNano(0),
+                LocalDateTime.now().plusDays(2L).withHour(18).withMinute(30).withSecond(0).withNano(0),
+                LocalDateTime.now().plusDays(2L).withHour(19).withMinute(0).withSecond(0).withNano(0),
+                LocalDateTime.now().plusDays(2L).withHour(19).withMinute(30).withSecond(0).withNano(0),
+                LocalDateTime.now().plusDays(2L).withHour(20).withMinute(0).withSecond(0).withNano(0),
+                LocalDateTime.now().plusDays(2L).withHour(20).withMinute(30).withSecond(0).withNano(0)
         );
 
         List<Showing> temporaryShowings = new ArrayList<>();
