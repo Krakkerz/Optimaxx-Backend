@@ -191,6 +191,7 @@ public class DummyDataConfig implements ApplicationRunner {
                 temporaryShowings.add(
                         Showing.builder()
                                 .movie(movies.get(randomMovieIndex))
+                                .startTime(time)
                                 .room(room)
                                 .basePrice(69)
                                 .build()

@@ -30,6 +30,6 @@ public class ShowingController {
         return showingService.getShowingById(id);
     }
 
-    @GetMapping("reservations/{id}")
+    @GetMapping("/reservations/{id}")
     public List<SeatResponse> getEmptySeats(@PathVariable Long id) {return showingService.getEmptySeats(id);}
 }

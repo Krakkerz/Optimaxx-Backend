@@ -35,7 +35,7 @@ public class ShowingService {
 
 
         // TODO: compare and exclude with reserved seats somewhere, but where? ;-;
-        return SeatResponse.of(showingResponse.getRoom().getSeats());
+        return null; // SeatResponse.of(showingResponse.getRoom()  .getSeats());
     }
 
     public List<SeatResponse> getAllSeatsByShowingId(Long id) {

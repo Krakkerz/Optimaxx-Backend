@@ -2,6 +2,7 @@ package dk.Optimaxx.OptimaxxBackend.DTO;
 
 import dk.Optimaxx.OptimaxxBackend.entity.Room;
 import dk.Optimaxx.OptimaxxBackend.entity.Showing;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -12,18 +13,19 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
-@Getter
-@Setter
-@NoArgsConstructor
+
+@Data
 public class ShowingResponse {
     private Long id;
-    private Room room;
+    private RoomResponse room;
     private LocalDateTime startTime;
-    private int baseprice;
+    private Integer basePrice;
 
     private ShowingResponse(Showing showing) {
         this.id = showing.getId();
-        this.room = showing.getRoom();
+        this.room = showing.getRoom() == null ? null : RoomResponse.of(showing.getRoom());
+        this.startTime = showing.getStartTime();
+        this.basePrice = showing.getBasePrice();
     }
 
     public static ShowingResponse of(Showing entity) {
