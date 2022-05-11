@@ -69,3 +69,8 @@ Who did what in this sprint:
 - Simon
 - Frederik
 - Malthe
+
+## Sprint #3 (W20 2022)
+we will try to finish the implementation of the movie overview and reservation
+
+We want to get the following done in this sprint:
