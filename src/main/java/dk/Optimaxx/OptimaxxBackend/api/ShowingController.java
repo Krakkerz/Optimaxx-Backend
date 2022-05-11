@@ -1,5 +1,6 @@
 package dk.Optimaxx.OptimaxxBackend.api;
 
+import dk.Optimaxx.OptimaxxBackend.DTO.SeatResponse;
 import dk.Optimaxx.OptimaxxBackend.DTO.ShowingResponse;
 import dk.Optimaxx.OptimaxxBackend.entity.Seat;
 import dk.Optimaxx.OptimaxxBackend.service.ShowingService;
@@ -30,5 +31,5 @@ public class ShowingController {
     }
 
     @GetMapping("reservations/{id}")
-    public Set<Seat> getEmptySeats(@PathVariable Long id) {return showingService.getEmptySeats(id);}
+    public List<SeatResponse> getEmptySeats(@PathVariable Long id) {return showingService.getEmptySeats(id);}
 }

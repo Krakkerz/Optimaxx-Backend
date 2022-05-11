@@ -29,13 +29,13 @@ public class ShowingService {
         return ShowingResponse.of(showingRepository.getById(id));
     }
 
-    public Set<Seat> getEmptySeats(Long id) {
+    public List<SeatResponse> getEmptySeats(Long id) {
         ShowingResponse showingResponse = getShowingById(id);
         ShowingResponse.of((Showing) reservationRepository.findByShowingIs(id));
 
 
         // TODO: compare and exclude with reserved seats somewhere, but where? ;-;
-        return showingResponse.getRoom().getSeats();
+        return SeatResponse.of(showingResponse.getRoom().getSeats());
     }
 
     public List<SeatResponse> getAllSeatsByShowingId(Long id) {

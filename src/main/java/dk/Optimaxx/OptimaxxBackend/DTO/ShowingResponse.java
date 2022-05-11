@@ -22,6 +22,8 @@ public class ShowingResponse {
     private int baseprice;
 
     private ShowingResponse(Showing showing) {
+        this.id = showing.getId();
+        this.room = showing.getRoom();
     }
 
     public static ShowingResponse of(Showing entity) {
