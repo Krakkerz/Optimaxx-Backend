@@ -20,7 +20,7 @@ public class Cinema {
     private Long id;
 
     private String name;
-    private String Location;
+    private String location;
 
     @OneToMany(mappedBy = "cinema", fetch =FetchType.LAZY, cascade = CascadeType.REMOVE)
     private Set<Room> rooms = new java.util.LinkedHashSet<>();
