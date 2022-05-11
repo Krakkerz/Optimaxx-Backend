@@ -56,8 +56,16 @@ Who did what in this sprint:
 We have decided to focus our work on showing which movies are in the cinema and getting reservations to work.
 
 We want to get the following done in this sprint:
-- Figure out how reservation api should work and begin work on it
-- Endpoint to tell the server to import a movie from imdb or themoviedb
-- Begin writing a few tests
-- Figure out how frontend should look/how the user should navigate (maybe produce a few wireframes?)
-- Begin work on implementing wireframes
+- [x] Figure out how reservation api should work and begin work on it
+- [x] Endpoint to tell the server to import a movie from imdb or themoviedb
+- [x] Begin writing a few tests
+- [x] Figure out how frontend should look/how the user should navigate (maybe produce a few wireframes?)
+- [x] Begin work on implementing wireframes
+
+Who did what in this sprint:
+- Mark
+  - initial backend reservation implementation
+  - few tests
+- Simon
+- Frederik
+- Malthe
