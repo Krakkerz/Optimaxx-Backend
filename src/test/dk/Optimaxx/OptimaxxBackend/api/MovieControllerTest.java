@@ -57,7 +57,7 @@ class MovieControllerTest {
                 .trailer("https://www.youtube.com/watch?v=n9xhJrPXop4")
                 .build();
         Movie movie2 = Movie.builder()
-                .id("myid1")
+                .id("myid2")
                 .title("Encanto")
                 .tagline("There's a little magic in all of us ...almost all of us.")
                 .category("Animation, Comedy, Family, Fantasy")
@@ -69,7 +69,7 @@ class MovieControllerTest {
                 .trailer("https://www.youtube.com/watch?v=CaimKeDcudo")
                 .build();
         movieRepository.save(movie1);
-        //movieRepository.save(movie2);
+        movieRepository.save(movie2);
     }
 
     @AfterAll

@@ -71,7 +71,7 @@ public static void teardown(@Autowired AccountRepository accountRepository){
                 .andExpect(status().isOk())
                 .andExpect(MockMvcResultMatchers.content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[0]").exists())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.length()").value(2));
+                .andExpect(MockMvcResultMatchers.jsonPath("$.length()").value(1));
     }
 
     @Test
