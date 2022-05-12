@@ -35,14 +35,6 @@ class MovieControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
-    @Autowired
-    private MovieRepository movieRepository1;
-
-    @Autowired
-    private ObjectMapper objectMapper;
-
-    private static Account account1ID;
-
     @BeforeAll
     public static void setUp(@Autowired MovieRepository movieRepository){
         Movie movie1 = Movie.builder()

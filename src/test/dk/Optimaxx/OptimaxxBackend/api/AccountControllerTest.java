@@ -47,7 +47,6 @@ private static Account account1ID;
 @BeforeAll
 public static void setUp(@Autowired AccountRepository accountRepository){
     Account account = Account.builder()
-            .id(2L)
             .name("bo")
             .email("bo@bo.dk")
             .phoneNumber("12345678")
@@ -63,7 +62,7 @@ public static void teardown(@Autowired AccountRepository accountRepository){
 
 
     @Test
-    void testGetAccounts() throws Exception{
+    void GetAccounts() throws Exception{
         mockMvc.perform(MockMvcRequestBuilders
                         .get("/api/accounts")
                         .accept(MediaType.APPLICATION_JSON))
@@ -72,6 +71,16 @@ public static void teardown(@Autowired AccountRepository accountRepository){
                 .andExpect(MockMvcResultMatchers.content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[0]").exists())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.length()").value(1));
+    }
+    @Test
+    void testGetAccounts() throws Exception{
+        mockMvc.perform(MockMvcRequestBuilders
+                        .get("/api/accounts/1")
+                        .accept(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.name").value("bo"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.mail").value("bo@bo.dk"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.phonenumber").value("12345678"));
     }
 
     @Test
