@@ -6,7 +6,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.Duration;
 import java.time.LocalDate;
 import java.util.Collection;
 import java.util.List;
@@ -35,7 +34,7 @@ public class MovieResponse {
         this.category = movie.getCategory();
         this.trailer = movie.getTrailer();
         this.rating = movie.getRating();
-        this.duration = DurationFormatter.format(movie.getDuration());
+        this.duration = DurationFormatter.formatDuration(movie.getDuration());
         this.plot = movie.getPlot();
     }
 
