@@ -19,12 +19,4 @@ class DurationFormatterTest {
         assertEquals(DurationFormatter.formatDuration(Duration.ZERO.plusMinutes(255)), "4h 15m");
         assertEquals(DurationFormatter.formatDuration(Duration.ZERO.minusMinutes(34)), "0h -34m");
     }
-
-    @Test
-    void formatLocalDateTime() {
-    }
-
-    @Test
-    void formatForDate() {
-    }
 }
