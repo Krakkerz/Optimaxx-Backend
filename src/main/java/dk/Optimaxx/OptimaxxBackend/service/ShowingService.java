@@ -31,7 +31,7 @@ public class ShowingService {
 
     public List<SeatResponse> getEmptySeats(Long id) {
         ShowingResponse showingResponse = getShowingById(id);
-        ShowingResponse.of((Showing) reservationRepository.findByShowingIs(id));
+        ShowingResponse.of((Showing) reservationRepository.findByShowingId(id));
 
 
         // TODO: compare and exclude with reserved seats somewhere, but where? ;-;

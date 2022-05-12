@@ -53,7 +53,7 @@ public class MovieService {
 
         String requestString = "%s/%s/%s/%s".formatted(apiUrl, apiKey, imdb_id, options);
 
-        URL requestURL = null;
+        URL requestURL;
         try {
             requestURL = URI.create(requestString).toURL();
         } catch (IllegalArgumentException | MalformedURLException ex) {
@@ -64,7 +64,7 @@ public class MovieService {
         ObjectMapper mapper = new ObjectMapper()
                 .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
-        ImdbMovieResponse imdbMovieResponse = null;
+        ImdbMovieResponse imdbMovieResponse;
         try (JsonParser parser = mapper.createParser(requestURL)) {
             imdbMovieResponse = parser.readValueAs(ImdbMovieResponse.class);
         } catch (IOException ex) {
