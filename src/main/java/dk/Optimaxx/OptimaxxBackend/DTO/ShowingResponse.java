@@ -10,23 +10,35 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.*;
 
 
 @Data
 public class ShowingResponse {
     private Long id;
+    private MovieResponse movie;
     private RoomResponse room;
-    private String startTime;
-    private String date;
+
+    private LocalDateTime startDateTime;
+    private LocalDate startDate;
+    private LocalTime startTime;
+    private String startWeekday;
+
     private Integer basePrice;
 
     private ShowingResponse(Showing showing) {
         this.id = showing.getId();
+        this.movie = showing.getMovie() == null ? null : MovieResponse.of(showing.getMovie());
         this.room = showing.getRoom() == null ? null : RoomResponse.of(showing.getRoom());
-        this.startTime = DurationFormatter.formatLocalDateTime(showing.getStartTime());
-        this.date = DurationFormatter.formatForDate(showing.getStartTime());
+
+        this.startDateTime = showing.getStartTime();
+        this.startDate = showing.getStartTime().toLocalDate();
+        this.startTime = showing.getStartTime().toLocalTime();
+        this.startWeekday = showing.getStartTime().getDayOfWeek().toString();
+
         this.basePrice = showing.getBasePrice();
     }
 

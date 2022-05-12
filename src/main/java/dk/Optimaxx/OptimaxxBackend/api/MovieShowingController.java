@@ -7,7 +7,9 @@ import dk.Optimaxx.OptimaxxBackend.service.MovieShowingService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequiredArgsConstructor
@@ -21,4 +23,8 @@ public class MovieShowingController {
         return movieShowingService.getAllShowingsByMovieId(movieId);
     }
 
+    @GetMapping("/groupByDate")
+    public Map<LocalDate, List<ShowingResponse>> getAllShowingsByMovieIdGroupByDate(@PathVariable String movieId) {
+        return movieShowingService.getAllShowingsByMovieIdGroupByDate(movieId);
+    }
 }
