@@ -32,6 +32,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @Transactional
 
 class AccountControllerTest {
+
 @Autowired
 private MockMvc mockMvc;
 
@@ -42,8 +43,6 @@ private AccountRepository accountRepository;
 private ObjectMapper objectMapper;
 
 private static Account account1ID;
-
-
 
 @BeforeAll
 public static void setUp(@Autowired AccountRepository accountRepository){
