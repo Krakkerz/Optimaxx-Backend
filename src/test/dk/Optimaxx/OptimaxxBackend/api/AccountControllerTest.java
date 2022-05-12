@@ -32,6 +32,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @Transactional
 
 class AccountControllerTest {
+
 @Autowired
 private MockMvc mockMvc;
 
@@ -42,8 +43,6 @@ private AccountRepository accountRepository;
 private ObjectMapper objectMapper;
 
 private static Account account1ID;
-
-
 
 @BeforeAll
 public static void setUp(@Autowired AccountRepository accountRepository){
@@ -72,7 +71,7 @@ public static void teardown(@Autowired AccountRepository accountRepository){
                 .andExpect(status().isOk())
                 .andExpect(MockMvcResultMatchers.content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[0]").exists())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.length()").value(2));
+                .andExpect(MockMvcResultMatchers.jsonPath("$.length()").value(1));
     }
 
     @Test
