@@ -10,6 +10,10 @@ public class DurationFormatter {
     }
 
     public static String formatLocalDateTime(LocalDateTime time) {
-        return "%d:%d".formatted(time.getHour(),time.getMinute());
+        return "%d:%d".formatted(time.getHour(), time.getMinute());
+    }
+
+    public static String formatForDate(LocalDateTime time) {
+        return time.getDayOfWeek().toString().toLowerCase() + " " +  time.getMonth().toString().toLowerCase() + time.getYear();
     }
 }

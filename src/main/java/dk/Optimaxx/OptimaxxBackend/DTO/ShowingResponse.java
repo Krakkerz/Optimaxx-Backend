@@ -11,10 +11,7 @@ import lombok.Setter;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 
 @Data
@@ -22,12 +19,14 @@ public class ShowingResponse {
     private Long id;
     private RoomResponse room;
     private String startTime;
+    private String date;
     private Integer basePrice;
 
     private ShowingResponse(Showing showing) {
         this.id = showing.getId();
         this.room = showing.getRoom() == null ? null : RoomResponse.of(showing.getRoom());
         this.startTime = DurationFormatter.formatLocalDateTime(showing.getStartTime());
+        this.date = DurationFormatter.formatForDate(showing.getStartTime());
         this.basePrice = showing.getBasePrice();
     }
 
