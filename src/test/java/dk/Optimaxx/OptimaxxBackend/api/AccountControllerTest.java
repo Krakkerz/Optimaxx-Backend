@@ -30,7 +30,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @Transactional
 class AccountControllerTest {
     @Autowired
-    MovieRepository movieRepository;
+    AccountRepository accountRepository;
 
     @Autowired
     MockMvc mockMvc;
@@ -52,11 +52,12 @@ class AccountControllerTest {
         accountRepository.save(account1);
     }
 
+    /*
     @AfterAll
     public static void teardown(AccountRepository accountRepository){
         accountRepository.deleteAll();
     }
-
+ */
 
     @Test
     void testGetAccounts() throws Exception{
