@@ -19,6 +19,8 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import javax.transaction.Transactional;
 
+import java.time.Duration;
+
 import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -50,6 +52,7 @@ class MovieControllerTest {
                 .picture("flot billede")
                 .rating(5.0)
                 .trailer("sej trailer")
+                .duration(Duration.ofMinutes(1200))
                 .build();
 
         movieRepository.save(movie1);
@@ -71,7 +74,7 @@ class MovieControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(MockMvcResultMatchers.content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[0]").exists())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.length()").value(2));
+                .andExpect(MockMvcResultMatchers.jsonPath("$.length()").value(1));
     }
 
 
