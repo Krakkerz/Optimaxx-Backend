@@ -82,6 +82,7 @@ We will try to finish the implementation of the movie overview and reservation
 We want to get the following done in this sprint:
 - [ ] reservations fully done from back to frontend
 - [ ] reservations tested
+- [ ] make 6-7 min video
 
 Who did what in this sprint:
 - Mark
