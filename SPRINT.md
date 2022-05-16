@@ -85,7 +85,7 @@ We want to get the following done in this sprint:
 
 Who did what in this sprint:
 - Mark
-  - fixed recurring database issue (finally)
+  - Fixed recurring database issue (finally)
   - Made home page on frontend
 - Simon
   - hello
