@@ -55,11 +55,12 @@ public static void setUp(@Autowired AccountRepository accountRepository){
     accountRepository.save(account);
 }
 
+/*
 @AfterAll
 public static void teardown(@Autowired AccountRepository accountRepository){
     accountRepository.deleteAll();
 }
-
+*/
 
     @Test
     void GetAccounts() throws Exception{
