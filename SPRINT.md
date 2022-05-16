@@ -77,6 +77,6 @@ Who did what in this sprint:
     - Did some minor work on backend to fit the responses to frontend.
 
 ## Sprint #3 (W20 2022)
-we will try to finish the implementation of the movie overview and reservation
+We will try to finish the implementation of the movie overview and reservation
 
 We want to get the following done in this sprint:
