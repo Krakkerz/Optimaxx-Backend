@@ -73,6 +73,8 @@ Who did what in this sprint:
   - dummy data
   - test
 - Malthe
+    - Continous frontend work. Working on implementing how we show each showing.
+    - Did some minor work on backend to fit the responses to frontend.
 
 ## Sprint #3 (W20 2022)
 we will try to finish the implementation of the movie overview and reservation
