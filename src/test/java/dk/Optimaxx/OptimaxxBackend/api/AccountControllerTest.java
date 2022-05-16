@@ -52,12 +52,12 @@ class AccountControllerTest {
         accountRepository.save(account1);
     }
 
-    /*
+
     @AfterAll
-    public static void teardown(AccountRepository accountRepository){
+    public static void teardown(@Autowired AccountRepository accountRepository){
         accountRepository.deleteAll();
     }
- */
+
 
     @Test
     void testGetAccounts() throws Exception{
