@@ -71,6 +71,8 @@ Who did what in this sprint:
   - Dummy Data Config
   - ShowingResponse and ShowingService on backend
 - Frederik
+  - dummy data
+  - test
 - Malthe
 
 ## Sprint #3 (W20 2022)
