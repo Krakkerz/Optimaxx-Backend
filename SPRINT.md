@@ -88,8 +88,8 @@ Who did what in this sprint:
   - fixed recurring database issue (finally)
   - Made home page on frontend
 - Simon
-  - 
+  - hello
 - Frederik
-  - 
+  - hello
 - Malthe
-  - 
+  - hello
