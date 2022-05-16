@@ -25,12 +25,4 @@ public class Reservation {
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Showing showing;
-
-    public Reservation(ReservationRequest request) {
-        this.account = request.getAccount();
-        this.seats = request.getSeats();
-        this.showing = request.getShowing();
-    }
 }
-
-

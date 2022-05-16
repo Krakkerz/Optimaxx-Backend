@@ -12,14 +12,17 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 public class ReservationResponse {
-    private Set<Seat> seats;
-    private Account account;
-    private Showing showing;
+    private Long id;
+    private List<SeatResponse> seats;
+    private AccountResponse account;
+    private ShowingResponse showing;
 
     public ReservationResponse(Reservation reservation) {
-        this.seats = reservation.getSeats();
-        this.account = reservation.getAccount();
-        this.showing = reservation.getShowing();
+        this.id = reservation.getId();
+
+        this.seats = reservation.getSeats() == null ? null : SeatResponse.reserved(reservation.getSeats());
+        this.account = reservation.getAccount() == null ? null : AccountResponse.of(reservation.getAccount());
+        this.showing = reservation.getShowing() == null ? null : ShowingResponse.of(reservation.getShowing());
     }
 
     public static List<ReservationResponse> of(List<Reservation> entities) {

@@ -30,36 +30,28 @@ public class DummyDataConfig implements ApplicationRunner {
     private final ShowingRepository showingRepository;
     private final ReservationRepository reservationRepository;
 
-    private List<Account> accounts = new ArrayList<>();
-    private List<Movie> movies = new ArrayList<>();
-    private List<Cinema> cinemas = new ArrayList<>();
-    private List<Room> rooms = new ArrayList<>();
-    private List<Seat> seats = new ArrayList<>();
-    private List<Showing> showings = new ArrayList<>();
-    private List<Reservation> reservations = new ArrayList<>();
-
     @Override
     public void run(ApplicationArguments args) throws Exception {
         accountRepository.deleteAll();
-        accounts = accountRepository.saveAll(makeAccountData());
+        accountRepository.saveAll(makeAccountData());
 
         movieRepository.deleteAll();
-        movies = movieRepository.saveAll(makeMovieData());
+        movieRepository.saveAll(makeMovieData());
 
         cinemaRepository.deleteAll();
-        cinemas = cinemaRepository.saveAll(makeCinemaData());
+        cinemaRepository.saveAll(makeCinemaData());
 
         roomRepository.deleteAll();
-        rooms = roomRepository.saveAll(makeRoomData());
+        roomRepository.saveAll(makeRoomData());
 
         seatRepository.deleteAll();
-        seats = seatRepository.saveAll(makeSeatData());
+        seatRepository.saveAll(makeSeatData());
 
         showingRepository.deleteAll();
-        showings = showingRepository.saveAll(makeShowingData());
+        showingRepository.saveAll(makeShowingData());
 
         reservationRepository.deleteAll();
-        reservations = reservationRepository.saveAll(makeReservationData());
+        reservationRepository.saveAll(makeReservationData());
     }
 
     private List<Account> makeAccountData() {
@@ -132,7 +124,7 @@ public class DummyDataConfig implements ApplicationRunner {
 
     private List<Room> makeRoomData() {
         List<Room> temporaryRooms = new ArrayList<>();
-        for (Cinema cinema : cinemas) {
+        for (Cinema cinema : cinemaRepository.findAll()) {
             temporaryRooms.add(
                     Room.builder()
                             .cinema(cinema)
@@ -157,7 +149,7 @@ public class DummyDataConfig implements ApplicationRunner {
 
     private List<Seat> makeSeatData() {
         List<Seat> temporarySeats = new ArrayList<>();
-        for (Room room : rooms) {
+        for (Room room : roomRepository.findAll()) {
             for (int i : IntStream.rangeClosed(1, 24).toArray()) { // seat numbers goes along the screen
                 for (int j : IntStream.rangeClosed(1, 15).toArray()) { // row numbers goes away from the screen
                     temporarySeats.add(Seat.builder()
@@ -187,12 +179,12 @@ public class DummyDataConfig implements ApplicationRunner {
 
         List<Showing> temporaryShowings = new ArrayList<>();
 
-        for (Room room : rooms) {
+        for (Room room : roomRepository.findAll()) {
             for (LocalDateTime time : times) {
-                int randomMovieIndex = ThreadLocalRandom.current().nextInt(movies.size()) % movies.size();
+                int randomMovieIndex = (int) (ThreadLocalRandom.current().nextInt(movieRepository.findAll().size()) % movieRepository.count());
                 temporaryShowings.add(
                         Showing.builder()
-                                .movie(movies.get(randomMovieIndex))
+                                .movie(movieRepository.findAll().get(randomMovieIndex))
                                 .startTime(time)
                                 .room(room)
                                 .basePrice(69)

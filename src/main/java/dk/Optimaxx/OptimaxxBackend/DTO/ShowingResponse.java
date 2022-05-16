@@ -1,19 +1,15 @@
 package dk.Optimaxx.OptimaxxBackend.DTO;
 
-import dk.Optimaxx.OptimaxxBackend.entity.Movie;
-import dk.Optimaxx.OptimaxxBackend.entity.Room;
+import dk.Optimaxx.OptimaxxBackend.entity.Reservation;
+import dk.Optimaxx.OptimaxxBackend.entity.Seat;
 import dk.Optimaxx.OptimaxxBackend.entity.Showing;
-import dk.Optimaxx.OptimaxxBackend.utilities.DurationFormatter;
 import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import org.springframework.stereotype.Repository;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.util.*;
+import java.util.Collection;
+import java.util.List;
 
 
 @Data
@@ -33,6 +29,13 @@ public class ShowingResponse {
         this.id = showing.getId();
         this.movie = showing.getMovie() == null ? null : MovieResponse.of(showing.getMovie());
         this.room = showing.getRoom() == null ? null : RoomResponse.of(showing.getRoom());
+
+        List<Long> reservedSeatIds = showing.getReservations().stream()
+                .map(Reservation::getSeats)
+                .flatMap(Collection::stream)
+                .map(Seat::getId).toList();
+
+        this.room.getSeats().forEach(seat -> seat.setReserved(reservedSeatIds.contains(seat.getId())));
 
         this.startDateTime = showing.getStartTime();
         this.startDate = showing.getStartTime().toLocalDate();

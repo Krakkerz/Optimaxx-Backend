@@ -23,7 +23,30 @@ public class SeatResponse {
         this.number = seat.getSeatNumber();
         this.row = seat.getSeatRow();
         this.type = seat.getType();
-        this.reserved = false;
+        this.reserved = null;
+    }
+    private SeatResponse(Seat seat, Boolean reserved) {
+        this.id = seat.getId();
+        this.number = seat.getSeatNumber();
+        this.row = seat.getSeatRow();
+        this.type = seat.getType();
+        this.reserved = reserved;
+    }
+
+    public static SeatResponse unreserved(Seat entity) {
+        return new SeatResponse(entity, false);
+    }
+
+    public static List<SeatResponse> unreserved(Collection<Seat> entities) {
+        return entities.stream().map(SeatResponse::unreserved).toList();
+    }
+
+    public static SeatResponse reserved(Seat entity) {
+        return new SeatResponse(entity, true);
+    }
+
+    public static List<SeatResponse> reserved(Collection<Seat> entities) {
+        return entities.stream().map(SeatResponse::reserved).toList();
     }
 
     public static SeatResponse of(Seat entity) {

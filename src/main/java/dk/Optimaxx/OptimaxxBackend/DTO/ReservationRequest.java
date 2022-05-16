@@ -5,6 +5,7 @@ import dk.Optimaxx.OptimaxxBackend.entity.Seat;
 import dk.Optimaxx.OptimaxxBackend.entity.Showing;
 import lombok.*;
 
+import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -13,7 +14,7 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ReservationRequest {
-    private Account account;
-    private Set<Seat> seats = new java.util.LinkedHashSet<>();
-    private Showing showing;
+    private Long accountId;
+    private List<Long> seatIds;
+    private Long showingId;
 }
