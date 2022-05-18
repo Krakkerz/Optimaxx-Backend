@@ -57,6 +57,12 @@ class ReservationControllerTest {
     @Autowired
     MockMvc mockMvc;
 
+    static Account account1;
+    static Account account2;
+    static List<Seat> temporarySeats = new ArrayList<>();
+    static List<Room> temporaryRooms = new ArrayList<>();
+    static List<Showing> temporaryShowings = new ArrayList<>();
+
     @BeforeAll
     public static void setup(@Autowired ReservationRepository reservationRepository,
                              @Autowired AccountRepository accountRepository,
@@ -65,12 +71,6 @@ class ReservationControllerTest {
                              @Autowired RoomRepository roomRepository,
                              @Autowired SeatRepository seatRepository,
                              @Autowired ShowingRepository showingRepository){
-
-        Account account1;
-        Account account2;
-        List<Seat> temporarySeats = new ArrayList<>();
-        List<Room> temporaryRooms = new ArrayList<>();
-        List<Showing> temporaryShowings = new ArrayList<>();
 
         accountRepository.saveAll(List.of(
                 account1 = Account.builder()
@@ -278,15 +278,10 @@ class ReservationControllerTest {
         //TODO: add this code back when the infinite recursion reservation creation has been finished.
 
         /*
-        Account accountGet = accountRepository.findAll().get(0);
-        Set<Seat> seatsGet = Set.of(seatRepository.getById(1L));
-        Showing showingGet = showingRepository.getById(1L);
-
-
         Reservation randomRes = Reservation.builder()
-                .account(accountGet)
-                .seats(seatsGet)
-                .showing(showingGet)
+                .account(account2)
+                .seats(Set.of(temporarySeats.get(6),temporarySeats.get(7)))
+                .showing(temporaryShowings.get(4))
                 .build();
 
         ObjectMapper objectMapper = new ObjectMapper();
@@ -305,5 +300,7 @@ class ReservationControllerTest {
                 .andExpect(status().isNotAcceptable());
 
          */
+
+
     }
 }
