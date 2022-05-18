@@ -150,8 +150,8 @@ public class DummyDataConfig implements ApplicationRunner {
     private List<Seat> makeSeatData() {
         List<Seat> temporarySeats = new ArrayList<>();
         for (Room room : roomRepository.findAll()) {
-            for (int i : IntStream.rangeClosed(1, 24).toArray()) { // seat numbers goes along the screen
-                for (int j : IntStream.rangeClosed(1, 15).toArray()) { // row numbers goes away from the screen
+            for (int i : IntStream.rangeClosed(1, 18).toArray()) { // seat numbers goes along the screen
+                for (int j : IntStream.rangeClosed(1, 7).toArray()) { // row numbers goes away from the screen
                     temporarySeats.add(Seat.builder()
                             .room(room)
                             .type("standard")
@@ -167,14 +167,14 @@ public class DummyDataConfig implements ApplicationRunner {
 
     private List<Showing> makeShowingData() {
         List<LocalDateTime> times = List.of(
-                LocalDateTime.now().plusDays(2L).withHour(17).withMinute(0).withSecond(0).withNano(0),
-                LocalDateTime.now().plusDays(2L).withHour(17).withMinute(30).withSecond(0).withNano(0),
-                LocalDateTime.now().plusDays(2L).withHour(18).withMinute(0).withSecond(0).withNano(0),
-                LocalDateTime.now().plusDays(2L).withHour(18).withMinute(30).withSecond(0).withNano(0),
                 LocalDateTime.now().plusDays(2L).withHour(19).withMinute(0).withSecond(0).withNano(0),
                 LocalDateTime.now().plusDays(2L).withHour(19).withMinute(30).withSecond(0).withNano(0),
-                LocalDateTime.now().plusDays(2L).withHour(20).withMinute(0).withSecond(0).withNano(0),
-                LocalDateTime.now().plusDays(2L).withHour(20).withMinute(30).withSecond(0).withNano(0)
+                LocalDateTime.now().plusDays(3L).withHour(19).withMinute(0).withSecond(0).withNano(0),
+                LocalDateTime.now().plusDays(3L).withHour(19).withMinute(30).withSecond(0).withNano(0),
+                LocalDateTime.now().plusDays(4L).withHour(19).withMinute(0).withSecond(0).withNano(0),
+                LocalDateTime.now().plusDays(4L).withHour(19).withMinute(30).withSecond(0).withNano(0),
+                LocalDateTime.now().plusDays(5L).withHour(19).withMinute(0).withSecond(0).withNano(0),
+                LocalDateTime.now().plusDays(5L).withHour(19).withMinute(30).withSecond(0).withNano(0)
         );
 
         List<Showing> temporaryShowings = new ArrayList<>();
