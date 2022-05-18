@@ -2,10 +2,9 @@ package dk.Optimaxx.OptimaxxBackend.api;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import dk.Optimaxx.OptimaxxBackend.entity.Account;
-import dk.Optimaxx.OptimaxxBackend.entity.Movie;
+import dk.Optimaxx.OptimaxxBackend.entity.Reservation;
+import dk.Optimaxx.OptimaxxBackend.entity.Seat;
 import dk.Optimaxx.OptimaxxBackend.repository.AccountRepository;
-import dk.Optimaxx.OptimaxxBackend.repository.MovieRepository;
-import lombok.NoArgsConstructor;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -20,38 +19,36 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import javax.transaction.Transactional;
 
+import java.util.Set;
+
+import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
 
 @SpringBootTest
 @ActiveProfiles("test")
 @AutoConfigureMockMvc
-@NoArgsConstructor
 @Transactional
+
 class AccountControllerTest {
-    @Autowired
-    AccountRepository accountRepository;
 
     @Autowired
-    MockMvc mockMvc;
+    private MockMvc mockMvc;
 
     @Autowired
-    private ObjectMapper objectMapper;
-
-    private static Account account1;
+    private AccountRepository accountRepository;
 
     @BeforeAll
-    public static void setup(@Autowired AccountRepository accountRepository){
-        account1 = Account.builder()
-                .email("e@mail.dk")
-                .name("giga chad")
+    public static void setUp(@Autowired AccountRepository accountRepository){
+        Account account = Account.builder()
+                .name("bo")
+                .email("bo@bo.dk")
                 .phoneNumber("12345678")
-                .id(1L)
                 .build();
 
-        accountRepository.save(account1);
+        accountRepository.save(account);
     }
-
 
     @AfterAll
     public static void teardown(@Autowired AccountRepository accountRepository){
@@ -60,7 +57,7 @@ class AccountControllerTest {
 
 
     @Test
-    void testGetAccounts() throws Exception{
+    void GetAccounts() throws Exception{
         mockMvc.perform(MockMvcRequestBuilders
                         .get("/api/accounts")
                         .accept(MediaType.APPLICATION_JSON))
@@ -69,5 +66,23 @@ class AccountControllerTest {
                 .andExpect(MockMvcResultMatchers.content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[0]").exists())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.length()").value(1));
+    }
+    @Test
+    void testGetAccounts() throws Exception{
+        mockMvc.perform(MockMvcRequestBuilders
+                        .get("/api/accounts/1")
+                        .accept(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.name").value("bo"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.mail").value("bo@bo.dk"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.phonenumber").value("12345678"));
+    }
+
+    @Test
+    void testDeleteAccount() {
+
+        accountRepository.deleteAll();
+        assertEquals(0, accountRepository.count());
+
     }
 }
