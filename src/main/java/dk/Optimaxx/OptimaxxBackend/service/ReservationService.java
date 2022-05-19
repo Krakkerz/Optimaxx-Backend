@@ -41,7 +41,7 @@ public class ReservationService {
     }
 
     public ReservationResponse addReservation(ReservationRequest request) {
-        Account account = accountRepository.getById(request.getAccountId());
+        Account account = accountRepository.getByEmail(request.getAccountEmail());
         Set<Seat> seats = Set.copyOf(seatRepository.findAllById(request.getSeatIds()));
         Showing showing = showingRepository.getById(request.getShowingId());
 

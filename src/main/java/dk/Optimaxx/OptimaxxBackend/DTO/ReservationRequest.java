@@ -14,7 +14,7 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ReservationRequest {
-    private Long accountId;
+    private String accountEmail;
     private List<Long> seatIds;
     private Long showingId;
 }
