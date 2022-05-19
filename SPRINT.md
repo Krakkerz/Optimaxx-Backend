@@ -64,8 +64,8 @@ We want to get the following done in this sprint:
 
 Who did what in this sprint:
 - Mark
-  - initial backend reservation implementation
-  - few tests
+  - Initial backend reservation implementation
+  - Few tests
 - Simon
   - Dummy Data Config
   - ShowingResponse and ShowingService on backend
@@ -86,8 +86,10 @@ We want to get the following done in this sprint:
 
 Who did what in this sprint:
 - Mark
-  - Fixed recurring database issue (finally)
+  - Fixed recurring database issue related to pooling (finally)
   - Made home page on frontend
+  - Made reservation tests (unfinished)
+ 
 - Simon
   - hello
 - Frederik
