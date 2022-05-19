@@ -95,4 +95,4 @@ Who did what in this sprint:
 - Frederik
   - hello
 - Malthe
-  - hello
+  - Worked on the seats reservation for frontend
