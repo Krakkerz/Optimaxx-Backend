@@ -19,7 +19,7 @@ import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.IntStream;
 
 @Configuration
-@Profile({"development", "production", "staging"})
+@Profile({"development"})
 @RequiredArgsConstructor
 public class DummyDataConfig implements ApplicationRunner {
     private final MovieRepository movieRepository;
