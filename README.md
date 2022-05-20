@@ -7,6 +7,7 @@ Implementing a booking system for a cinema chain
 - Frontend [repository](https://github.com/Krakkerz/Optimaxx-Frontend) and [deployment](https://ashy-hill-02df19203.1.azurestaticapps.net) also with [our own domain](https://optimaxx.malthegram.dk)
 - Backend [repository](https://github.com/Krakkerz/Optimaxx-Backend) and [deployment](https://optimaxx.azurewebsites.net)
 - We have documented our weekly sprints in [our sprint plan](SPRINT.md)
+- Link to our [video](https://drive.google.com/file/d/1_jOgIRYFme5l1Ccy6qBo0mGJbuST-MEl/view)
 
 ## Group Members
 [Malthe Gram](https://github.com/MaltheGram), [Mark Larsen](https://github.com/mark3010),
