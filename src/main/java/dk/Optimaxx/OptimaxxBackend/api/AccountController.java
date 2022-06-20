@@ -20,7 +20,6 @@ public class AccountController {
     public List<AccountResponse> getAccounts(Pageable pageable){
         return accountService.getAllAccounts(pageable);
     }
-
     @GetMapping("/{id}")
     public AccountResponse getAccounts(@PathVariable Long id){
         return accountService.getAccountById(id);
